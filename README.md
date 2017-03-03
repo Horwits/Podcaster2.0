@@ -17,7 +17,7 @@ A social network for drummers.
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Horwits/Drummers/blob/master/LICENSE) file for details
 
-## Acknowledgments
+## Clarifications
 
 * This is a project for [TelerikAcademy's ASP.NET MVC course](https://telerikacademy.com/Courses/asp-net-mvc).
 
