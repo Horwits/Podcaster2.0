@@ -1,9 +1,9 @@
-configuration : Release
-
-# restore NuGet packages before running MSBuild
+version: 1.0.{build}
+branches:
+  only:
+  - master
 before_build:
-  nuget restore
-  
-  build:
-    verbosity: minimal
-    publish_wap: true
+- ps: nuget restore Drummers.sln
+build:
+  project: Drummers.sln
+verbosity: minimal
