@@ -6,4 +6,4 @@ before_build:
 - ps: nuget restore Drummers.sln
 build:
   project: Drummers.sln
-verbosity: minimal
+  verbosity: minimal
