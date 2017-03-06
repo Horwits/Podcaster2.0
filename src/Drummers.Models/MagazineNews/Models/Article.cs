@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 using Drummers.Models.Contracts;
 
-namespace Drummers.Models
+namespace Drummers.Models.MagazineNews.Models
 {
     public class Article : IArticle
     {
