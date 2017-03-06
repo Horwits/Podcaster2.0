@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drummers.Common", "src\Drum
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drummers.Services.Tests", "test\Drummers.Services.Tests\Drummers.Services.Tests.csproj", "{C3694C3C-D97A-489C-B272-485D0AC8E567}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drummers.Models", "src\Drummers.Models\Drummers.Models.csproj", "{7FCC0C2C-7320-4B33-AC3A-E36F7BFF04DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drummers.Data", "src\Drummers.Data\Drummers.Data.csproj", "{FBBE3976-4FC7-4C14-AB8E-150BBF526B6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
