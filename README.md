@@ -2,7 +2,6 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/rjr2mwwwbfswasxl?svg=true)](https://ci.appveyor.com/project/Horwits/drummers)
 
-A social network for drummers.
 ## Built With
 
 * [ASP.NET MVC](https://www.asp.net/mvc) - The web framework used
