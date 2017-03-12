@@ -21,6 +21,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drummers.Models", "src\Drum
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drummers.Data", "src\Drummers.Data\Drummers.Data.csproj", "{FBBE3976-4FC7-4C14-AB8E-150BBF526B6E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2F8E6840-32F1-41D8-B3C7-DF5FED951378}"
+	ProjectSection(SolutionItems) = preProject
+		.coveralls.yml = .coveralls.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
