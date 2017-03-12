@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.coveralls.yml = .coveralls.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drummers.Services", "src\Drummers.Services\Drummers.Services.csproj", "{E1D6075C-6E7F-4B6A-BB35-A95D10A2D561}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{FBBE3976-4FC7-4C14-AB8E-150BBF526B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBBE3976-4FC7-4C14-AB8E-150BBF526B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBBE3976-4FC7-4C14-AB8E-150BBF526B6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1D6075C-6E7F-4B6A-BB35-A95D10A2D561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1D6075C-6E7F-4B6A-BB35-A95D10A2D561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1D6075C-6E7F-4B6A-BB35-A95D10A2D561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1D6075C-6E7F-4B6A-BB35-A95D10A2D561}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +73,6 @@ Global
 		{C3694C3C-D97A-489C-B272-485D0AC8E567} = {5656F157-D7A0-4BD0-BB6D-38DF0140C333}
 		{7FCC0C2C-7320-4B33-AC3A-E36F7BFF04DA} = {9C03D90D-A138-4278-B6FE-CF38AB1E2B76}
 		{FBBE3976-4FC7-4C14-AB8E-150BBF526B6E} = {9C03D90D-A138-4278-B6FE-CF38AB1E2B76}
+		{E1D6075C-6E7F-4B6A-BB35-A95D10A2D561} = {9C03D90D-A138-4278-B6FE-CF38AB1E2B76}
 	EndGlobalSection
 EndGlobal
