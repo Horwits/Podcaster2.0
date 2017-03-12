@@ -5,6 +5,7 @@ using System.Web;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
 using Ninject;
+using Ninject.Extensions.Factory;
 using Ninject.Web.Common;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Drummers.Mvc.App_Start.NinjectWebCommon), "Start")]
@@ -83,6 +84,7 @@ namespace Drummers.Mvc.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IDrummersDbContextFactory>().To<Data.Factories.DrummersDbContextFactory>().InRequestScope();
+            /*kernel.Bind<IDrummersDbContextFactory>().ToFactory().InRequestScope();*/
         }
     }
 }

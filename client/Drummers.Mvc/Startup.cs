@@ -1,5 +1,4 @@
-﻿using Drummers.Data.Factories;
-using Drummers.Data.Factories.Contracts;
+﻿using Drummers.Data.Factories.Contracts;
 using Drummers.Mvc.App_Start;
 
 using Microsoft.Owin;
