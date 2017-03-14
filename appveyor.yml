@@ -1,5 +1,7 @@
 version: 1.0.{build}
-
+environment:
+  COVERALLS_REPO_TOKEN:
+    secure: EzPyu+0iuuzRfWoTjni5ZMeBN0QUwme8+OPCu4X37If0x0zOuud1c5b2Sd3Z3cFZ
 branches:
   only:
   - master
