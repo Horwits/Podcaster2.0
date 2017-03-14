@@ -1,6 +1,8 @@
 # Drummers
 
-[![Build status](https://ci.appveyor.com/api/projects/status/rjr2mwwwbfswasxl?svg=true)](https://ci.appveyor.com/project/Horwits/drummers) [![Coverage Status](https://coveralls.io/repos/github/Horwits/Drummers/badge.svg)](https://coveralls.io/github/Horwits/Drummers)
+AppVeyor | Coveralls
+--- | --- |
+[![Build status](https://ci.appveyor.com/api/projects/status/rjr2mwwwbfswasxl?svg=true)](https://ci.appveyor.com/project/Horwits/drummers) | [![Coverage Status](https://coveralls.io/repos/github/Horwits/Drummers/badge.svg)](https://coveralls.io/github/Horwits/Drummers)
 
 ## Built With
 
