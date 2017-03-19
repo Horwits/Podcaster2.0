@@ -1,41 +1,17 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 
 namespace Drummers.Domain.Entities.Tests
 {
     /// <summary>
     /// Summary description for Temp
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class Temp
     {
-        private TestContext testContextInstance;
-
-        public Temp()
-        {
-            // TODO: Add constructor logic here
-        }
-
-        /// <summary>
-        /// Gets or sets the test context which provides
-        /// information about and functionality for the current test run.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return this.testContextInstance;
-            }
-
-            set
-            {
-                this.testContextInstance = value;
-            }
-        }
-
-        [TestMethod]
+        [Test]
         public void TestMethod1()
         {
-            // TODO: Add test logic here
+            Assert.IsTrue(true);
         }
 
         // You can use the following additional attributes as you write your tests:
