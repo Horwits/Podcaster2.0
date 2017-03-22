@@ -1,13 +1,21 @@
-﻿namespace Podcaster.Models
+﻿using System;
+
+using Microsoft.AspNet.Identity;
+
+using Podcaster.Models.Contracts;
+
+using IUser = Podcaster.Models.Contracts.IUser;
+
+namespace Podcaster.Models
 {
-    public class UserRole
+    public class UserRole : IUserRole
     {
-        public Role Role { get; set; }
+        public IRole<Guid> Role { get; set; }
 
-        public int RoleId { get; set; }
+        public Guid RoleId { get; set; }
 
-        public User User { get; set; }
+        public IUser User { get; set; }
 
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
     }
 }
