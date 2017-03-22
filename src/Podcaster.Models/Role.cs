@@ -2,7 +2,7 @@
 
 using Microsoft.AspNet.Identity;
 
-namespace Podcaster.Models.Models
+namespace Podcaster.Models
 {
     public class Role : IRole<Guid>
     {

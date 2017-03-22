@@ -1,4 +1,4 @@
-﻿namespace Podcaster.Models.Models
+﻿namespace Podcaster.Models
 {
     public class UserRole
     {

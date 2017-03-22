@@ -43,12 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Models\Role.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Models\UserClaim.cs" />
-    <Compile Include="Models\UserLogin.cs" />
-    <Compile Include="Models\UserRole.cs" />
+    <Compile Include="Factories\Contracts\IModelsFactory.cs" />
+    <Compile Include="Contracts\IUser.cs" />
+    <Compile Include="Factories\ModelsFactory.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserClaim.cs" />
+    <Compile Include="UserLogin.cs" />
+    <Compile Include="UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
