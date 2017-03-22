@@ -2,7 +2,7 @@
 
 AppVeyor | Coveralls
 --- | --- |
-[![Build status](https://ci.appveyor.com/api/projects/status/rjr2mwwwbfswasxl?svg=true)](https://ci.appveyor.com/project/Horwits/drummers) | [![Coverage Status](https://coveralls.io/repos/github/Horwits/Podcaster2.0/badge.svg)](https://coveralls.io/github/Horwits/Podcaster2.0)
+[![Build status](https://ci.appveyor.com/api/projects/status/rjr2mwwwbfswasxl?svg=true)](https://ci.appveyor.com/project/Horwits/drummers) | [![Coverage Status](https://coveralls.io/repos/github/Horwits/Podcaster2.0/badge.svg?branch=master)](https://coveralls.io/github/Horwits/Podcaster2.0?branch=master)
 
 ## Built With
 
