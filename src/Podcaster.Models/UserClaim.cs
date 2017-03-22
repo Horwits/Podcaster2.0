@@ -1,8 +1,10 @@
 ﻿using System;
 
+using Podcaster.Models.Contracts;
+
 namespace Podcaster.Models
 {
-    public class UserClaim
+    public class UserClaim : IUserClaim
     {
         public string ClaimType { get; set; }
 
@@ -10,7 +12,7 @@ namespace Podcaster.Models
 
         public Guid Id { get; set; }
 
-        public User User { get; set; }
+        public IUser User { get; set; }
 
         public Guid UserId { get; set; }
     }

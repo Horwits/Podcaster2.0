@@ -46,6 +46,7 @@
     <Compile Include="Factories\Contracts\IModelsFactory.cs" />
     <Compile Include="Contracts\IUser.cs" />
     <Compile Include="Factories\ModelsFactory.cs" />
+    <Compile Include="Contracts\IUserClaim.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserClaim.cs" />
