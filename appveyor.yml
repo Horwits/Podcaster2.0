@@ -6,11 +6,11 @@ branches:
   only:
   - master
 before_build:
-- ps: nuget restore Drummers.sln
+- ps: nuget restore Podcaster2.0.sln
 build:
-  project: Drummers.sln
+  project: Podcaster2.0.sln
   verbosity: minimal
 
 after_test: 
-  - packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -target:"packages\NUnit.ConsoleRunner.3.6.1\tools\nunit3-console.exe" -targetargs:"/domain:single src\Tests\UnitTests\Core\Drummers.Domain.Entities.Tests\bin\Debug\Drummers.Domain.Entities.Tests.dll" -filter:"+[*]*" -register:user  -output:coverage.xml
+  - packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -target:"packages\NUnit.ConsoleRunner.3.6.1\tools\nunit3-console.exe" -targetargs:"/domain:single src\Podcaster.UnitTests\bin\Debug\Podcaster.UnitTests.dll" -filter:"+[*]*" -register:user  -output:coverage.xml
   - packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover coverage.xml
