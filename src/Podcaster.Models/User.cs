@@ -2,9 +2,11 @@
 
 using Microsoft.AspNet.Identity;
 
+using IUser = Podcaster.Models.Contracts.IUser;
+
 namespace Podcaster.Models
 {
-    public class User : IUser<Guid>, Contracts.IUser
+    public class User : IUser<Guid>, IUser
     {
         public User()
         {
