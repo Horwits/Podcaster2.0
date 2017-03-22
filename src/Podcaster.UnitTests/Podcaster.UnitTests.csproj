@@ -50,14 +50,39 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Models\Factories\ModelsFactory\CreateUserShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Podcaster.CompositionModules\Podcaster.CompositionModules.csproj">
+      <Project>{7d806601-c9cd-40fd-a094-8a20072678fb}</Project>
+      <Name>Podcaster.CompositionModules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Podcaster.Data\Podcaster.Data.csproj">
+      <Project>{b3ea48c0-50ed-433f-8d66-91dde7d9b1d0}</Project>
+      <Name>Podcaster.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Podcaster.Models\Podcaster.Models.csproj">
+      <Project>{1f83d194-4433-4e87-90cd-8f640b6a03bf}</Project>
+      <Name>Podcaster.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Podcaster.Services\Podcaster.Services.csproj">
+      <Project>{33400b7d-e029-4a05-921c-4cc7b303c555}</Project>
+      <Name>Podcaster.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Podcaster.WebClient\Podcaster.WebClient.csproj">
+      <Project>{2b8c0f39-3f01-43be-a0c2-1accc3fb9828}</Project>
+      <Name>Podcaster.WebClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
