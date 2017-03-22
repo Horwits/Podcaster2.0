@@ -1,6 +1,6 @@
 ﻿using Ploeh.AutoFixture;
 
-namespace Podcaster.UnitTests
+namespace Podcaster.UnitTests.Abstractions
 {
     public abstract class BaseTestClass
     {

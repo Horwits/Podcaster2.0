@@ -56,10 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseTestClass.cs" />
+    <Compile Include="Abstractions\BaseTestClass.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Models\Factories\ModelsFactory\CreateUserShould.cs" />
     <Compile Include="Models\Role\SettersShould.cs" />
+    <Compile Include="Models\UserClaim\SettersShould.cs" />
     <Compile Include="Models\User\SettersShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

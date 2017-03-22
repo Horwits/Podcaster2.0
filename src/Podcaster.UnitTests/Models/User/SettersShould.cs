@@ -4,6 +4,8 @@ using NUnit.Framework;
 
 using Ploeh.AutoFixture;
 
+using Podcaster.UnitTests.Abstractions;
+
 namespace Podcaster.UnitTests.Models.User
 {
     [TestFixture]
