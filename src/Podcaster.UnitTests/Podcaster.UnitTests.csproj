@@ -61,6 +61,7 @@
     <Compile Include="Models\Factories\ModelsFactory\CreateUserShould.cs" />
     <Compile Include="Models\Role\SettersShould.cs" />
     <Compile Include="Models\UserClaim\SettersShould.cs" />
+    <Compile Include="Models\UserLogin\SettersShould.cs" />
     <Compile Include="Models\User\SettersShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
