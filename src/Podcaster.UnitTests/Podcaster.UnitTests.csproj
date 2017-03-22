@@ -59,6 +59,7 @@
     <Compile Include="BaseTestClass.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Models\Factories\ModelsFactory\CreateUserShould.cs" />
+    <Compile Include="Models\Role\SettersShould.cs" />
     <Compile Include="Models\User\SettersShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
