@@ -17,13 +17,9 @@ namespace Podcaster.UnitTests.Models.UserClaim
         {
             // Arrange
             var claimType = this.Fixture.Create<string>();
-
             var claimValue = this.Fixture.Create<string>();
-
             var id = this.Fixture.Create<Guid>();
-
             IUser user = this.Fixture.Create<Podcaster.Models.User>();
-
             var userId = user.Id;
 
             // Act
