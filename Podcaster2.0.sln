@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Podcaster.WebClient", "src\Podcaster.WebClient\Podcaster.WebClient.csproj", "{2B8C0F39-3F01-43BE-A0C2-1ACCC3FB9828}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{789920E9-313A-40C7-AAAD-252F53C532F9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{17FE0BA0-FB00-4E14-B494-28AB49B9CB72}"
@@ -31,16 +29,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Podcaster.Identity", "src\Podcaster.Identity\Podcaster.Identity.csproj", "{71B2CFBB-E855-4BC1-B808-47E9E9609108}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Podcaster.WebClient", "Podcaster.WebClient\Podcaster.WebClient.csproj", "{9327678E-2C94-4BE5-974C-D5EE1FEC7822}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2B8C0F39-3F01-43BE-A0C2-1ACCC3FB9828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B8C0F39-3F01-43BE-A0C2-1ACCC3FB9828}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B8C0F39-3F01-43BE-A0C2-1ACCC3FB9828}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B8C0F39-3F01-43BE-A0C2-1ACCC3FB9828}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B3EA48C0-50ED-433F-8D66-91DDE7D9B1D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B3EA48C0-50ED-433F-8D66-91DDE7D9B1D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3EA48C0-50ED-433F-8D66-91DDE7D9B1D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -61,16 +59,25 @@ Global
 		{1F83D194-4433-4E87-90CD-8F640B6A03BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F83D194-4433-4E87-90CD-8F640B6A03BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F83D194-4433-4E87-90CD-8F640B6A03BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71B2CFBB-E855-4BC1-B808-47E9E9609108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71B2CFBB-E855-4BC1-B808-47E9E9609108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71B2CFBB-E855-4BC1-B808-47E9E9609108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71B2CFBB-E855-4BC1-B808-47E9E9609108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9327678E-2C94-4BE5-974C-D5EE1FEC7822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9327678E-2C94-4BE5-974C-D5EE1FEC7822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9327678E-2C94-4BE5-974C-D5EE1FEC7822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9327678E-2C94-4BE5-974C-D5EE1FEC7822}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2B8C0F39-3F01-43BE-A0C2-1ACCC3FB9828} = {789920E9-313A-40C7-AAAD-252F53C532F9}
 		{B3EA48C0-50ED-433F-8D66-91DDE7D9B1D0} = {8AF3C2FE-B233-41B6-8E72-41FD6D437794}
 		{A63B981E-91AF-494C-9D0F-A1C0520686EA} = {0D1B2D6C-22E5-4D8F-A511-BF096F5BB804}
 		{7D806601-C9CD-40FD-A094-8A20072678FB} = {8AF3C2FE-B233-41B6-8E72-41FD6D437794}
 		{33400B7D-E029-4A05-921C-4CC7B303C555} = {DCE320CE-D6BC-4580-8FEE-19EFF1A454D7}
 		{1F83D194-4433-4E87-90CD-8F640B6A03BF} = {17FE0BA0-FB00-4E14-B494-28AB49B9CB72}
+		{71B2CFBB-E855-4BC1-B808-47E9E9609108} = {DCE320CE-D6BC-4580-8FEE-19EFF1A454D7}
+		{9327678E-2C94-4BE5-974C-D5EE1FEC7822} = {789920E9-313A-40C7-AAAD-252F53C532F9}
 	EndGlobalSection
 EndGlobal

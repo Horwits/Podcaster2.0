@@ -4,6 +4,6 @@ namespace Podcaster.Models.Factories.Contracts
 {
     public interface IModelsFactory
     {
-        IUser CreateUser();
+        IApplicationUser CreateUser(string username, string email);
     }
 }

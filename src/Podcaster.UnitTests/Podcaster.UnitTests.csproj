@@ -37,6 +37,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="Moq, Version=4.7.1.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Moq.4.7.1\lib\net45\Moq.dll</HintPath>
     </Reference>
@@ -48,22 +51,40 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="TestStack.FluentMVCTesting, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\TestStack.FluentMVCTesting.3.0.0\lib\NET45\TestStack.FluentMVCTesting.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstractions\BaseTestClass.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Controllers\HomeControllerShould.cs" />
     <Compile Include="Models\Factories\ModelsFactory\CreateUserShould.cs" />
-    <Compile Include="Models\Role\SettersShould.cs" />
-    <Compile Include="Models\UserClaim\SettersShould.cs" />
-    <Compile Include="Models\UserLogin\SettersShould.cs" />
-    <Compile Include="Models\UserRole\SettersShould.cs" />
-    <Compile Include="Models\User\SettersShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +95,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Podcaster.WebClient\Podcaster.WebClient.csproj">
+      <Project>{9327678e-2c94-4be5-974c-d5ee1fec7822}</Project>
+      <Name>Podcaster.WebClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Podcaster.CompositionModules\Podcaster.CompositionModules.csproj">
       <Project>{7d806601-c9cd-40fd-a094-8a20072678fb}</Project>
       <Name>Podcaster.CompositionModules</Name>
@@ -82,6 +107,10 @@
       <Project>{b3ea48c0-50ed-433f-8d66-91dde7d9b1d0}</Project>
       <Name>Podcaster.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Podcaster.Identity\Podcaster.Identity.csproj">
+      <Project>{71b2cfbb-e855-4bc1-b808-47e9e9609108}</Project>
+      <Name>Podcaster.Identity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Podcaster.Models\Podcaster.Models.csproj">
       <Project>{1f83d194-4433-4e87-90cd-8f640b6a03bf}</Project>
       <Name>Podcaster.Models</Name>
@@ -89,10 +118,6 @@
     <ProjectReference Include="..\Podcaster.Services\Podcaster.Services.csproj">
       <Project>{33400b7d-e029-4a05-921c-4cc7b303c555}</Project>
       <Name>Podcaster.Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Podcaster.WebClient\Podcaster.WebClient.csproj">
-      <Project>{2b8c0f39-3f01-43be-a0c2-1accc3fb9828}</Project>
-      <Name>Podcaster.WebClient</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
