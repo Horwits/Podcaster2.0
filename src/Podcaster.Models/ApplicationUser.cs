@@ -8,29 +8,24 @@ using Podcaster.Models.Contracts;
 
 namespace Podcaster.Models
 {
+    // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser, IApplicationUser
     {
-        public ApplicationUser(string userName, string email)
-            : base(userName)
+        public ApplicationUser(string userName, string email) : base(userName)
         {
+            Email = email;
         }
 
         public ApplicationUser()
         {
         }
 
-        public virtual ClaimsIdentity GenerateUserIdentity(IApplicationUserManager manager)
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = manager.CreateIdentity(this, DefaultAuthenticationTypes.ApplicationCookie);
-
+            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
             return userIdentity;
-        }
-
-        public virtual Task<ClaimsIdentity> GenerateUserIdentityAsync(IApplicationUserManager manager)
-        {
-            return Task.FromResult(this.GenerateUserIdentity(manager));
         }
     }
 }
