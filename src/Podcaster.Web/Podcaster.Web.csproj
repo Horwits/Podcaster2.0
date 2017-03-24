@@ -49,6 +49,10 @@
       <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Podcaster.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Podcaster.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -195,6 +199,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\TopTenPodcastsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -258,6 +263,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Default\" />
+    <Folder Include="Views\TopTenPodcasts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -275,10 +282,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Podcaster.Data\Podcaster.Data.csproj">
-      <Project>{B3EA48C0-50ED-433F-8D66-91DDE7D9B1D0}</Project>
-      <Name>Podcaster.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Podcaster.Identity\Podcaster.Identity.csproj">
       <Project>{71B2CFBB-E855-4BC1-B808-47E9E9609108}</Project>
       <Name>Podcaster.Identity</Name>
@@ -286,6 +289,10 @@
     <ProjectReference Include="..\Podcaster.Models\Podcaster.Models.csproj">
       <Project>{1F83D194-4433-4E87-90CD-8F640B6A03BF}</Project>
       <Name>Podcaster.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Podcaster.Services\Podcaster.Services.csproj">
+      <Project>{33400B7D-E029-4A05-921C-4CC7B303C555}</Project>
+      <Name>Podcaster.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

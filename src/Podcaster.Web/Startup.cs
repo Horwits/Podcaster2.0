@@ -2,6 +2,8 @@
 
 using Owin;
 
+using Podcaster.Services;
+
 [assembly: OwinStartup(typeof(Podcaster.Web.Startup))]
 
 namespace Podcaster.Web
