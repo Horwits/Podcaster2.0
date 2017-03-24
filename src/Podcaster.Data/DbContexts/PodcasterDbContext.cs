@@ -1,20 +1,19 @@
-﻿using System.Data.Entity;
-
 using Microsoft.AspNet.Identity.EntityFramework;
 
-using Podcaster.Data.DbContexts.Contracts;
 using Podcaster.Models;
 
 namespace Podcaster.Data.DbContexts
 {
-    public class PodcasterDbContext : IdentityDbContext<ApplicationUser>, IPodcasterDbContext
+    public class PodcasterDbContext : IdentityDbContext<ApplicationUser>
     {
         public PodcasterDbContext()
-            : base("DefaultConnection")
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
-            this.Database.CreateIfNotExists();
         }
 
-        public DbContext DbContext { get; }
+        public static PodcasterDbContext Create()
+        {
+            return new PodcasterDbContext();
+        }
     }
 }
