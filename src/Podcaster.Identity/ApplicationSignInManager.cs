@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 using Microsoft.AspNet.Identity.Owin;
@@ -9,6 +10,7 @@ using Podcaster.Models;
 
 namespace Podcaster.Identity
 {
+    [ExcludeFromCodeCoverage]
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
     {
         public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager)
@@ -16,7 +18,7 @@ namespace Podcaster.Identity
         {
         }
 
-        public override Task<ClaimsIdentity> CreateUserIdentityAsync(ApplicationUser user)
+        public Task<ClaimsIdentity> CreateUserIdentityAsync(ApplicationUser user)
         {
             return user.GenerateUserIdentityAsync((ApplicationUserManager)this.UserManager);
         }

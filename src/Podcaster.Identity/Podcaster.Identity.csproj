@@ -66,6 +66,10 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Podcaster.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Podcaster.Web\Bin\Podcaster.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -88,10 +92,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Podcaster.Data\Podcaster.Data.csproj">
-      <Project>{B3EA48C0-50ED-433F-8D66-91DDE7D9B1D0}</Project>
-      <Name>Podcaster.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Podcaster.Models\Podcaster.Models.csproj">
       <Project>{1F83D194-4433-4E87-90CD-8F640B6A03BF}</Project>
       <Name>Podcaster.Models</Name>

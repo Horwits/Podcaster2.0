@@ -74,8 +74,10 @@
     <Compile Include="Contracts\IApplicationSignInManager.cs" />
     <Compile Include="Contracts\IApplicationUser.cs" />
     <Compile Include="Contracts\IApplicationUserManager.cs" />
+    <Compile Include="Contracts\IPodcastEntity.cs" />
     <Compile Include="Factories\Contracts\IModelsFactory.cs" />
     <Compile Include="Factories\ModelsFactory.cs" />
+    <Compile Include="Podcast.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

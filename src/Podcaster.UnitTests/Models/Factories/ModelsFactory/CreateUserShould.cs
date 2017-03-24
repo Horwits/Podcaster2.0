@@ -5,7 +5,7 @@ using NUnit.Framework;
 using Ploeh.AutoFixture;
 
 using Podcaster.Models.Contracts;
-using Podcaster.UnitTests.Abstractions;
+using Podcaster.UnitTests.Base;
 
 namespace Podcaster.UnitTests.Models.Factories.ModelsFactory
 {

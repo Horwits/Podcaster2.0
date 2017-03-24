@@ -13,7 +13,7 @@ namespace Podcaster.Models
     {
         public ApplicationUser(string userName, string email) : base(userName)
         {
-            Email = email;
+            this.Email = email;
         }
 
         public ApplicationUser()

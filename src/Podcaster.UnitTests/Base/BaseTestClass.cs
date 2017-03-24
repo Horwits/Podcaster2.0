@@ -2,7 +2,7 @@
 
 using Ploeh.AutoFixture;
 
-namespace Podcaster.UnitTests.Abstractions
+namespace Podcaster.UnitTests.Base
 {
     [ExcludeFromCodeCoverage]
     public abstract class BaseTestClass
