@@ -5,11 +5,8 @@ using Moq;
 
 using NUnit.Framework;
 
-using Ploeh.AutoFixture;
-
 using Podcaster.Identity;
 using Podcaster.Models;
-using Podcaster.Models.Contracts;
 using Podcaster.UnitTests.Base;
 using Podcaster.Web.Controllers;
 
@@ -29,9 +26,7 @@ namespace Podcaster.UnitTests.Controllers.Manage
             var fakeAppUserManager = new ApplicationUserManager(mockUserStore);
             var fakeAppSignInManager = new ApplicationSignInManager(fakeAppUserManager, mockAuthManager);
 
-            var manageController = new ManageController(
-                fakeAppUserManager,
-                fakeAppSignInManager);
+            var manageController = new ManageController(fakeAppUserManager, fakeAppSignInManager);
 
             // Act & Assert
             manageController.WithCallTo(m => m.AddPhoneNumber()).ShouldRenderDefaultView();
@@ -46,9 +41,7 @@ namespace Podcaster.UnitTests.Controllers.Manage
             var fakeAppUserManager = new ApplicationUserManager(mockUserStore);
             var fakeAppSignInManager = new ApplicationSignInManager(fakeAppUserManager, mockAuthManager);
 
-            var manageController = new ManageController(
-                fakeAppUserManager,
-                fakeAppSignInManager);
+            var manageController = new ManageController(fakeAppUserManager, fakeAppSignInManager);
 
             // Act & Assert
             manageController.WithCallTo(m => m.AddPhoneNumber()).ShouldRenderDefaultView();

@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.ServiceModel.Syndication;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Linq;
 
 using Newtonsoft.Json.Linq;
 
@@ -15,6 +10,66 @@ namespace Podcaster.Console
 {
     class Program
     {
+        private static void GetValue(string urlToXml)
+        {
+            XmlReader reader = XmlReader.Create(urlToXml);
+            SyndicationFeed feed = SyndicationFeed.Load(reader);
+            reader.Close();
+            SyndicationItem item = feed.Items.ElementAt(3);
+
+            System.Console.WriteLine(item.Id);
+            System.Console.WriteLine();
+
+            System.Console.WriteLine(item.Authors);
+            System.Console.WriteLine();
+
+            System.Console.WriteLine(item.SourceFeed.Generator);
+            System.Console.WriteLine();
+
+            System.Console.WriteLine(item.LastUpdatedTime.Date);
+            System.Console.WriteLine();
+
+            /* System.Console.WriteLine(item.Links.Count);
+             foreach (var i in item.Links)
+             {
+                 System.Console.WriteLine(i.);
+             }*/
+
+            /* ParseLinkToFeed(item.Id);
+             System.Console.WriteLine();
+             System.Console.WriteLine(item.Title.Text);
+             System.Console.WriteLine();*/
+
+            /*System.Console.WriteLine(item.Id);*/
+
+            /*var summary = item.Summary.Text;
+            System.Console.WriteLine(summary);*/
+        }
+
+        static void Main(string[] args)
+        {
+            var url = @"https://itunes.apple.com/us/rss/toppodcasts/limit=10/explicit=true/";
+
+            /*var json = new WebClient().DownloadString(url + "json");*/
+            string urlToXml = url + "xml";
+
+            MyMethod(urlToXml);
+
+            // GetValue(urlToXml);
+
+            /*JToken node = JToken.Parse(json);
+
+            WalkNode(node, n =>
+            {
+                JToken token = n["feed"];
+                if (token != null && token.Type == JTokenType.String)
+                {
+                    string title = token.Value<string>();
+                    System.Console.WriteLine(title);
+                }
+            });*/
+        }
+
         static void MyMethod(string url)
         {
             XmlDocument doc = new XmlDocument();
@@ -45,68 +100,6 @@ namespace Podcaster.Console
         {
             var match = Regex.Match(url, @"(\d+)");
             System.Console.WriteLine(match);
-        }
-
-        static void Main(string[] args)
-        {
-
-            var url = @"https://itunes.apple.com/us/rss/toppodcasts/limit=10/explicit=true/";
-            /*var json = new WebClient().DownloadString(url + "json");*/
-
-            string urlToXml = url + "xml";
-
-             MyMethod(urlToXml);
-
-            // GetValue(urlToXml);
-
-            /*JToken node = JToken.Parse(json);
-
-            WalkNode(node, n =>
-            {
-                JToken token = n["feed"];
-                if (token != null && token.Type == JTokenType.String)
-                {
-                    string title = token.Value<string>();
-                    System.Console.WriteLine(title);
-                }
-            });*/
-        }
-
-        private static void GetValue(string urlToXml)
-        {
-            XmlReader reader = XmlReader.Create(urlToXml);
-            SyndicationFeed feed = SyndicationFeed.Load(reader);
-            reader.Close();
-            SyndicationItem item = feed.Items.ElementAt(3);
-
-            System.Console.WriteLine(item.Id);
-            System.Console.WriteLine();
-
-            System.Console.WriteLine(item.Authors);
-            System.Console.WriteLine();
-
-            System.Console.WriteLine(item.SourceFeed.Generator);
-            System.Console.WriteLine();
-
-            System.Console.WriteLine(item.LastUpdatedTime.Date);
-            System.Console.WriteLine();
-
-           /* System.Console.WriteLine(item.Links.Count);
-            foreach (var i in item.Links)
-            {
-                System.Console.WriteLine(i.);
-            }*/
-
-           /* ParseLinkToFeed(item.Id);
-            System.Console.WriteLine();
-            System.Console.WriteLine(item.Title.Text);
-            System.Console.WriteLine();*/
-
-            /*System.Console.WriteLine(item.Id);*/
-
-            /*var summary = item.Summary.Text;
-            System.Console.WriteLine(summary);*/
-
         }
 
         static void WalkNode(JToken node, Action<JObject> action)

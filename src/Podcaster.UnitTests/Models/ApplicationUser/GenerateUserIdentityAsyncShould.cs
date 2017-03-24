@@ -1,19 +1,14 @@
-﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Claims;
-using System.Text;
+﻿using System.Security.Claims;
 using System.Threading.Tasks;
 
 using Microsoft.AspNet.Identity;
 
 using Moq;
 
+using NUnit.Framework;
+
 using Ploeh.AutoFixture;
 
-using Podcaster.Models.Contracts;
 using Podcaster.UnitTests.Base;
 
 namespace Podcaster.UnitTests.Models.ApplicationUser

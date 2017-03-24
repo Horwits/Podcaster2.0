@@ -246,7 +246,9 @@ namespace Podcaster.Web.Controllers
         {
             this.ViewBag.StatusMessage = message == ManageMessageId.RemoveLoginSuccess
                                              ? "The external login was removed."
-                                             : message == ManageMessageId.Error ? "An error has occurred." : string.Empty;
+                                             : message == ManageMessageId.Error
+                                                 ? "An error has occurred."
+                                                 : string.Empty;
             var user = await this.UserManager.FindByIdAsync(this.User.Identity.GetUserId());
             if (user == null)
             {

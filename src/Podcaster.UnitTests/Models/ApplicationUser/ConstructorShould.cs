@@ -13,7 +13,7 @@ namespace Podcaster.UnitTests.Models.ApplicationUser
         {
             // Arrange
             var appUser = new Podcaster.Models.ApplicationUser(name, email);
-            
+
             // Act & Assert
             Assert.AreEqual(name, appUser.UserName);
             Assert.AreEqual(email, appUser.Email);
