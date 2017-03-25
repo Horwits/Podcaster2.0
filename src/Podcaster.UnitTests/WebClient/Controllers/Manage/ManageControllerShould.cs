@@ -5,14 +5,17 @@ using Moq;
 
 using NUnit.Framework;
 
+using Ploeh.AutoFixture;
+
 using Podcaster.Identity;
 using Podcaster.Models;
 using Podcaster.UnitTests.Base;
 using Podcaster.Web.Controllers;
+using Podcaster.Web.Models.Manage;
 
 using TestStack.FluentMVCTesting;
 
-namespace Podcaster.UnitTests.Controllers.Manage
+namespace Podcaster.UnitTests.WebClient.Controllers.Manage
 {
     [TestFixture]
     public class ManageControllerShould : BaseTestClass
@@ -46,5 +49,21 @@ namespace Podcaster.UnitTests.Controllers.Manage
             // Act & Assert
             manageController.WithCallTo(m => m.AddPhoneNumber()).ShouldRenderDefaultView();
         }
+
+        /*[Test]
+        public void Return_DefaultViewOfAddPhoneNumberPage_When_ModelStateIsValid()
+        {
+            // Arrange
+            var mockUserStore = new Mock<IUserStore<ApplicationUser>>().Object;
+            var mockAuthManager = new Mock<IAuthenticationManager>().Object;
+            var fakeAppUserManager = new ApplicationUserManager(mockUserStore);
+            var fakeAppSignInManager = new ApplicationSignInManager(fakeAppUserManager, mockAuthManager);
+
+            var manageController = new ManageController(fakeAppUserManager, fakeAppSignInManager);
+            var validModel = this.Fixture.Create<AddPhoneNumberViewModel>();
+
+            // Act & Assert
+            manageController.WithCallTo(m => m.AddPhoneNumber()).ShouldRenderDefaultView().WithModel(validModel);
+        }*/
     }
 }

@@ -5,7 +5,7 @@ using Podcaster.Web.Controllers;
 
 using TestStack.FluentMVCTesting;
 
-namespace Podcaster.UnitTests.Controllers.Home
+namespace Podcaster.UnitTests.WebClient.Controllers.Home
 {
     [TestFixture]
     public class HomeControllerShould : BaseTestClass
