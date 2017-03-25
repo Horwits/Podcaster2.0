@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 using Microsoft.AspNet.Identity;
@@ -14,12 +15,11 @@ namespace Podcaster.Models
         public ApplicationUser(string userName, string email)
             : base(userName)
         {
+            this.Subscriptions = new HashSet<Podcast>();
             this.Email = email;
         }
 
-        public ApplicationUser()
-        {
-        }
+        private ICollection<Podcast> Subscriptions { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

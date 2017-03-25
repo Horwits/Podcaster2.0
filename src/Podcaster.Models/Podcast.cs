@@ -1,18 +1,27 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+
+using Podcaster.Models.Contracts;
 
 namespace Podcaster.Models
 {
-    public class Podcast
+    public class Podcast : IPodcast
     {
+        public Podcast()
+        {
+            this.Episodes = new HashSet<Episode>();
+            this.Subscribers = new HashSet<ApplicationUser>();
+        }
+
+        public Guid PodcastId { get; set; }
+
         public string AuthorName { get; set; }
 
-        public ICollection<string> Categories { get; set; }
+        public virtual ICollection<string> Categories { get; set; }
 
         public string Copyright { get; set; }
 
         public string Description { get; set; }
-
-        public string HomepageUrl { get; set; }
 
         public string ImageUrl { get; set; }
 
@@ -23,5 +32,9 @@ namespace Podcaster.Models
         public decimal Pricing { get; set; }
 
         public string Title { get; set; }
+
+        public virtual ICollection<Episode> Episodes { get; set; }
+
+        public virtual ICollection<ApplicationUser> Subscribers { get; set; }
     }
 }

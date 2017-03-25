@@ -70,15 +70,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="Contracts\IApplicationSignInManager.cs" />
     <Compile Include="Contracts\IApplicationUser.cs" />
     <Compile Include="Contracts\IApplicationUserManager.cs" />
-    <Compile Include="Contracts\IPodcastEntity.cs" />
+    <Compile Include="Contracts\IPodcast.cs" />
+    <Compile Include="Episode.cs" />
     <Compile Include="Factories\Contracts\IModelsFactory.cs" />
     <Compile Include="Factories\ModelsFactory.cs" />
+    <Compile Include="Contracts\IEpisode.cs" />
     <Compile Include="Podcast.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
