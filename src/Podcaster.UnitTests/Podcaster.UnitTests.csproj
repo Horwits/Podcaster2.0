@@ -113,7 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseTestClass.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="WebClient\Controllers\Home\HomeControllerShould.cs" />
     <Compile Include="WebClient\Controllers\Manage\ManageControllerShould.cs" />
     <Compile Include="Models\ApplicationUser\ConstructorShould.cs" />
