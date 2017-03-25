@@ -57,6 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContexts\PodcasterDbContext.cs" />
+    <Compile Include="Migrations\201703251304362_Initial.cs" />
+    <Compile Include="Migrations\201703251304362_Initial.Designer.cs">
+      <DependentUpon>201703251304362_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -73,6 +77,11 @@
   <ItemGroup>
     <Folder Include="DbContexts\Contracts\" />
     <Folder Include="Repositories\Contracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703251304362_Initial.resx">
+      <DependentUpon>201703251304362_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

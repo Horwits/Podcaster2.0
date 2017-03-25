@@ -7,7 +7,7 @@ namespace Podcaster.Data.DbContexts
     public class PodcasterDbContext : IdentityDbContext<ApplicationUser>
     {
         public PodcasterDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("PodcasterDataBase", throwIfV1Schema: false)
         {
         }
 
