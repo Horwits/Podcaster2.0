@@ -6,6 +6,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 
 using Podcaster.Data.DbContexts;
+using Podcaster.Data.Migrations;
 
 namespace Podcaster.Web
 {
@@ -14,7 +15,7 @@ namespace Podcaster.Web
     {
         protected void Application_Start()
         {
-            /*Database.SetInitializer(new MigrateDatabaseToLatestVersion<PodcasterDbContext, Configurations>());*/
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<PodcasterDbContext, Configuration>());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

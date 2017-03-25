@@ -58,10 +58,6 @@
     <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Podcaster.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Bin\Podcaster.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -314,21 +310,25 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Podcaster.Common\Podcaster.Common.csproj">
+      <Project>{943e3583-3e46-4f00-872e-7c4ecb6a7f2d}</Project>
+      <Name>Podcaster.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Podcaster.CompositionModules\Podcaster.CompositionModules.csproj">
       <Project>{7d806601-c9cd-40fd-a094-8a20072678fb}</Project>
       <Name>Podcaster.CompositionModules</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Podcaster.Data\Podcaster.Data.csproj">
+      <Project>{b3ea48c0-50ed-433f-8d66-91dde7d9b1d0}</Project>
+      <Name>Podcaster.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Podcaster.Identity\Podcaster.Identity.csproj">
-      <Project>{71B2CFBB-E855-4BC1-B808-47E9E9609108}</Project>
+      <Project>{71b2cfbb-e855-4bc1-b808-47e9e9609108}</Project>
       <Name>Podcaster.Identity</Name>
     </ProjectReference>
     <ProjectReference Include="..\Podcaster.Models\Podcaster.Models.csproj">
-      <Project>{1F83D194-4433-4E87-90CD-8F640B6A03BF}</Project>
+      <Project>{1f83d194-4433-4e87-90cd-8f640b6a03bf}</Project>
       <Name>Podcaster.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Podcaster.Services\Podcaster.Services.csproj">
-      <Project>{33400B7D-E029-4A05-921C-4CC7B303C555}</Project>
-      <Name>Podcaster.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -4,6 +4,8 @@ using System.Linq;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
+using Ploeh.AutoFixture;
+
 using Podcaster.Common.Constants;
 using Podcaster.Data.DbContexts;
 using Podcaster.Models;
@@ -12,6 +14,8 @@ namespace Podcaster.Data.Migrations
 {
     public sealed class Configuration : DbMigrationsConfiguration<PodcasterDbContext>
     {
+        private UserManager<ApplicationUser> userManager;
+
         public Configuration()
         {
             this.AutomaticMigrationsEnabled = true;
@@ -20,17 +24,8 @@ namespace Podcaster.Data.Migrations
 
         protected override void Seed(PodcasterDbContext context)
         {
-            SeedRoles(context);
+            this.userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
-            if (!context.Users.Any())
-            {
-                var store = new UserStore<ApplicationUser>(context);
-                var manager = new UserManager<ApplicationUser>(store);
-            }
-        }
-
-        private static void SeedRoles(PodcasterDbContext context)
-        { 
             if (!context.Roles.Any(role => role.Name == GlobalConstants.UserRole))
             {
                 var store = new RoleStore<IdentityRole>(context);
@@ -46,6 +41,28 @@ namespace Podcaster.Data.Migrations
                 var role = new IdentityRole(GlobalConstants.AdminRole);
                 manager.Create(role);
             }
+
+            if (context.Users.Count() != 10)
+            {
+                var fixture = new Fixture();
+                for (int i = 0; i < 10; i++)
+                {
+                    var mail = $"a{i}b{i*2}@abv.com";
+                    var user = new ApplicationUser { Email = mail, UserName = mail };
+
+                    this.userManager.Create(user, "123456");
+
+                    this.userManager.AddToRole(user.Id, GlobalConstants.UserRole);
+                }
+            }
+        }
+
+        private void SeedRoles(PodcasterDbContext context)
+        {
+        }
+
+        private void SeedUsers(PodcasterDbContext context)
+        {
         }
     }
 }

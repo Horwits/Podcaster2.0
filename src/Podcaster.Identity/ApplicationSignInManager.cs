@@ -29,7 +29,7 @@ namespace Podcaster.Identity
                 context.Authentication);
         }
 
-        public Task<ClaimsIdentity> CreateUserIdentityAsync(ApplicationUser user)
+        public override Task<ClaimsIdentity> CreateUserIdentityAsync(ApplicationUser user)
         {
             return user.GenerateUserIdentityAsync((ApplicationUserManager)this.UserManager);
         }

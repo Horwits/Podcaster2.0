@@ -102,7 +102,7 @@ namespace Podcaster.Console
             System.Console.WriteLine(match);
         }
 
-        static void WalkNode(JToken node, Action<JObject> action)
+        /*static void WalkNode(JToken node, Action<JObject> action)
         {
             if (node.Type == JTokenType.Object)
             {
@@ -120,6 +120,6 @@ namespace Podcaster.Console
                     WalkNode(child, action);
                 }
             }
-        }
+        }*/
     }
 }
