@@ -16,7 +16,7 @@ namespace Podcaster.Web.Attributes
 
             if (isAuthenticated && !isInRole)
             {
-                filterContext.Result = new ViewResult() { ViewName = "~/Views/Shared/_NotAuthorizedView.cshtml" };
+                filterContext.Result = new ViewResult() { ViewName = "~/Views/Shared/_NotAuthorized.cshtml" };
             }
             else
             {
