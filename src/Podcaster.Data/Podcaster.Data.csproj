@@ -56,10 +56,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbContexts\Contracts\IPodcasterDbContext.cs" />
     <Compile Include="DbContexts\PodcasterDbContext.cs" />
     <Compile Include="Migrations\201703251304362_Initial.cs" />
     <Compile Include="Migrations\201703251304362_Initial.Designer.cs">
       <DependentUpon>201703251304362_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703251414130_AddedRelationships.cs" />
+    <Compile Include="Migrations\201703251414130_AddedRelationships.Designer.cs">
+      <DependentUpon>201703251414130_AddedRelationships.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703251420022_AddedRelationships1.cs" />
+    <Compile Include="Migrations\201703251420022_AddedRelationships1.Designer.cs">
+      <DependentUpon>201703251420022_AddedRelationships1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,12 +84,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DbContexts\Contracts\" />
     <Folder Include="Repositories\Contracts\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703251304362_Initial.resx">
       <DependentUpon>201703251304362_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703251414130_AddedRelationships.resx">
+      <DependentUpon>201703251414130_AddedRelationships.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703251420022_AddedRelationships1.resx">
+      <DependentUpon>201703251420022_AddedRelationships1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

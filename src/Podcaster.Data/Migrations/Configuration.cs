@@ -1,6 +1,11 @@
 using System.Data.Entity.Migrations;
+using System.Linq;
+
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 using Podcaster.Data.DbContexts;
+using Podcaster.Models;
 
 namespace Podcaster.Data.Migrations
 {
@@ -14,16 +19,21 @@ namespace Podcaster.Data.Migrations
 
         protected override void Seed(PodcasterDbContext context)
         {
-            // This method will be called after migrating to the latest version.
+            if (!context.Roles.Any(role => role.Name == "User"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole("User");
+                manager.Create(role);
+            }
 
-            // You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            // to avoid creating duplicate seed data. E.g.
-            // context.People.AddOrUpdate(
-            // p => p.FullName,
-            // new Person { FullName = "Andrew Peters" },
-            // new Person { FullName = "Brice Lambson" },
-            // new Person { FullName = "Rowan Miller" }
-            // );
+            if (!context.Roles.Any(role => role.Name == "Administrator"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole("Administrator");
+                manager.Create(role);
+            }
         }
     }
 }
