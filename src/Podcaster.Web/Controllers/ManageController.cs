@@ -9,6 +9,7 @@ using Microsoft.Owin.Security;
 
 using Podcaster.Identity;
 using Podcaster.Web.Models;
+using Podcaster.Web.Models.Manage;
 
 namespace Podcaster.Web.Controllers
 {
