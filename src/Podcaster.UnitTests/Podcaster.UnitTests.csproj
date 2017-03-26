@@ -125,6 +125,8 @@
     <Compile Include="WebClient\Controllers\Account\ForgotPasswordGetShould.cs" />
     <Compile Include="WebClient\Controllers\Account\RegisterGetShould.cs" />
     <Compile Include="WebClient\Controllers\Account\ResetPasswordConfirmationGetShould.cs" />
+    <Compile Include="WebClient\Controllers\Manage\AddPhoneNumberGetShould - Copy.cs" />
+    <Compile Include="WebClient\Controllers\Manage\SetPasswordGetShould.cs" />
     <Compile Include="WebClient\Controllers\Manage\ChangePasswordGetShould.cs" />
     <Compile Include="WebClient\Controllers\Home\HomeControllerShould.cs" />
     <Compile Include="WebClient\Controllers\Manage\ChangePasswordPostShould.cs" />
