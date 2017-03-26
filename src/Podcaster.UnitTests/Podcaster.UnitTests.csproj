@@ -122,6 +122,11 @@
     <Compile Include="Services\Podcast\DeleteShould.cs" />
     <Compile Include="Services\Podcast\AddShould.cs" />
     <Compile Include="Services\Podcast\ConstructorShould.cs" />
+    <Compile Include="Services\User\DeleteShould.cs" />
+    <Compile Include="Services\User\ConstructorShould.cs" />
+    <Compile Include="Services\User\AddShould.cs" />
+    <Compile Include="Services\User\FindByIdShould.cs" />
+    <Compile Include="Services\User\UpdateShould.cs" />
     <Compile Include="WebClient\Controllers\Account\ExternalLoginFailureGetShould.cs" />
     <Compile Include="WebClient\Controllers\Account\ForgotPasswordConfirmationGetShould.cs" />
     <Compile Include="WebClient\Controllers\Account\ForgotPasswordGetShould.cs" />

@@ -25,7 +25,7 @@ namespace Podcaster.UnitTests.Models.ApplicationUser
             var userManager = new Mock<UserManager<Podcaster.Models.ApplicationUser>>(userStore.Object);
 
             var authType = this.Fixture.Create<string>();
-            var user = this.Fixture.Create<Podcaster.Models.ApplicationUser>();
+            var user = this.Fixture.Build<Podcaster.Models.ApplicationUser>().Without(p => p.Subscriptions).Create();
 
             // Act
             var result = user.GenerateUserIdentityAsync(userManager.Object);

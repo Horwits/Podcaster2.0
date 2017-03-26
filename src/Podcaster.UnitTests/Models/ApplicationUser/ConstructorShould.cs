@@ -5,7 +5,6 @@ namespace Podcaster.UnitTests.Models.ApplicationUser
     [TestFixture]
     public class ConstructorShould
     {
-        // TODO: Possible check -> it is email
         [TestCase("def", "def@abv.bg")]
         [TestCase("dedsadaf", "ddsadaef@abv.bg")]
         [TestCase("ddsaaef", "defdsada@abv.bg")]
@@ -17,6 +16,16 @@ namespace Podcaster.UnitTests.Models.ApplicationUser
             // Act & Assert
             Assert.AreEqual(name, appUser.UserName);
             Assert.AreEqual(email, appUser.Email);
+        }
+
+        [Test]
+        public void Set_Subscriptions_WhenValid()
+        {
+            // Arrange
+            var appUser = new Podcaster.Models.ApplicationUser();
+
+            // Act & Assert
+            Assert.IsNotNull(appUser.Subscriptions);
         }
     }
 }
