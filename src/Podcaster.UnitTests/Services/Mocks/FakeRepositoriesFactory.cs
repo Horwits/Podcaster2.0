@@ -6,10 +6,10 @@ using Moq;
 
 using Podcaster.Data.Repositories.Contracts;
 using Podcaster.Models;
-using Podcaster.Models.Contracts;
 
 namespace Podcaster.UnitTests.Services.Mocks
 {
+    [ExcludeFromCodeCoverage]
     internal class FakeRepositoriesFactory
     {
         private readonly FakePodcastEntityFactory fakePodcastEntityFactory;

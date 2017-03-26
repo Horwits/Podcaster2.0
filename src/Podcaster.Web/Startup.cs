@@ -1,4 +1,6 @@
-﻿using Microsoft.Owin;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using Microsoft.Owin;
 
 using Owin;
 
@@ -6,6 +8,8 @@ using Owin;
 
 namespace Podcaster.Web
 {
+    [ExcludeFromCodeCoverage]
+
     public partial class Startup
     {
         public void Configuration(IAppBuilder app)

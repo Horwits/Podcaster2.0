@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 using Moq;
 
@@ -7,6 +8,7 @@ using Podcaster.Models.Contracts;
 
 namespace Podcaster.UnitTests.Services.Mocks
 {
+    [ExcludeFromCodeCoverage]
     internal class FakePodcastEntityFactory
     {
         internal IMock<IPodcastEntity> GetMockedPodcastEntity()

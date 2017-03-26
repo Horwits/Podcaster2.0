@@ -1,9 +1,11 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
 using Microsoft.AspNet.Identity;
 
 namespace Podcaster.Identity
 {
+    [ExcludeFromCodeCoverage]
     public class EmailService : IIdentityMessageService
     {
         public Task SendAsync(IdentityMessage message)

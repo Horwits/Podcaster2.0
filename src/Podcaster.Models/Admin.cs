@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Podcaster.Models
 {
+    [ExcludeFromCodeCoverage]
     public class Admin
     {
         public Admin()

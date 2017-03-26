@@ -1,24 +1,25 @@
-﻿using System.Web.Mvc;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Web.Mvc;
 
 namespace Podcaster.Web.Areas.Error
 {
-    public class ErrorAreaRegistration : AreaRegistration 
+    [ExcludeFromCodeCoverage]
+    public class ErrorAreaRegistration : AreaRegistration
     {
-        public override string AreaName 
+        public override string AreaName
         {
-            get 
+            get
             {
                 return "Error";
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
                 "Error_default",
                 "Error/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
-            );
+                new { action = "Index", id = UrlParameter.Optional });
         }
     }
 }

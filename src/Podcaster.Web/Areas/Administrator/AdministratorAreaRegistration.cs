@@ -1,7 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Web.Mvc;
 
 namespace Podcaster.Web.Areas.Administrator
 {
+    [ExcludeFromCodeCoverage]
     public class AdministratorAreaRegistration : AreaRegistration
     {
         public override string AreaName
