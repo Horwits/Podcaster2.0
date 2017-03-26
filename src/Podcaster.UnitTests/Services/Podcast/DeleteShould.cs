@@ -11,8 +11,7 @@ using Podcaster.UnitTests.Services.Mocks;
 namespace Podcaster.UnitTests.Services.Podcast
 {
     [TestFixture]
-    public class DeleteShould
-         : BaseTestClass
+    public class AddShould : BaseTestClass
     {
         [Test]
         public void Throw_WhenArgument_IsNotValid()
@@ -23,7 +22,7 @@ namespace Podcaster.UnitTests.Services.Podcast
             var fakeData = new FakePodcasterDataFactory(repoFaktory).GetPodcasterData();
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => new PodcastService(fakeData.Object).Delete(null));
+            Assert.Throws<ArgumentNullException>(() => new PodcastService(fakeData.Object).Add(null));
         }
 
         [Test]
@@ -37,7 +36,7 @@ namespace Podcaster.UnitTests.Services.Podcast
             var entity = fakeEntityFactory.GetPodcastEntity();
 
             // Act & Assert
-            Assert.DoesNotThrow(() => sut.Delete(entity));
+            Assert.DoesNotThrow(() => sut.Add(entity));
         }
 
 
