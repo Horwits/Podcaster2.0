@@ -24,14 +24,14 @@ namespace Podcaster.Services.Podcast
         {
             Guard.WhenArgument(podcast, nameof(podcast)).IsNull().Throw();
 
-            this.data.Podcasts.Add(podcast as PodcastEntity);
+            this.data.Podcasts.Add(podcast);
         }
 
         public void Delete(PodcastEntity podcast)
         {
             Guard.WhenArgument(podcast, nameof(podcast)).IsNull().Throw();
 
-            this.data.Podcasts.Add(podcast as PodcastEntity);
+            this.data.Podcasts.Add(podcast);
         }
 
         public PodcastEntity FindById(Guid id)
@@ -52,7 +52,7 @@ namespace Podcaster.Services.Podcast
         {
             Guard.WhenArgument(podcast, nameof(podcast)).IsNull().Throw();
 
-            this.data.Podcasts.Add(podcast as PodcastEntity);
+            this.data.Podcasts.Add(podcast);
         }
     }
 }
