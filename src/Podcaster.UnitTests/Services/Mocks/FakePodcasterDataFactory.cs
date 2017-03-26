@@ -11,22 +11,17 @@ namespace Podcaster.UnitTests.Services.Mocks
     {
         private readonly FakeRepositoriesFactory fakeRepositoriesFactory;
 
-        private readonly FakePodcastEntityFactory fakePodcastEntityFactory;
-
-        internal FakePodcasterDataFactory(FakeRepositoriesFactory fakeRepositoriesFactory, FakePodcastEntityFactory fakePodcastEntityFactory)
+        internal FakePodcasterDataFactory(FakeRepositoriesFactory fakeRepositoriesFactory)
         {
             this.fakeRepositoriesFactory = fakeRepositoriesFactory;
-            this.fakePodcastEntityFactory = fakePodcastEntityFactory;
         }
 
         internal IMock<IPodcasterDataEF> GetPodcasterData()
         {
             var fakeData = new Mock<IPodcasterDataEF>();
 
-            var fakePodcastRepo = this.fakeRepositoriesFactory.GetPodcastRepository().Object;
-
-            fakeData.Setup(x => x.Podcasts)
-                .Returns((IRepository<PodcastEntity>)fakePodcastRepo);
+            var fakePodcastRepo = this.fakeRepositoriesFactory.GetPodcastRepository();
+            fakeData.Setup(x => x.Podcasts).Returns(fakePodcastRepo.Object);
 
             return fakeData;
         }

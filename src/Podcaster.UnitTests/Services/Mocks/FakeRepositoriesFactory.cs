@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 using Moq;
@@ -14,35 +14,35 @@ namespace Podcaster.UnitTests.Services.Mocks
     {
         private readonly FakePodcastEntityFactory fakePodcastEntityFactory;
 
-        public FakeRepositoriesFactory(FakePodcastEntityFactory fakePodcastEntityFactory)
+        internal FakeRepositoriesFactory(FakePodcastEntityFactory fakePodcastEntityFactory)
         {
             this.fakePodcastEntityFactory = fakePodcastEntityFactory;
         }
 
-        internal Mock<IRepository<IPodcastEntity>> GetPodcastRepository()
+        internal Mock<IRepository<PodcastEntity>> GetPodcastRepository()
         {
-            var result = new Mock<IRepository<IPodcastEntity>>(MockBehavior.Strict);
-            result.Setup(x => x.Add(It.IsAny<IPodcastEntity>()));
-            result.Setup(x => x.Delete(It.IsAny<IPodcastEntity>()));
-            result.Setup(x => x.Update(It.IsAny<IPodcastEntity>()));
+            var result = new Mock<IRepository<PodcastEntity>>(MockBehavior.Strict);
+            result.Setup(x => x.Add(It.IsAny<PodcastEntity>()));
+            result.Setup(x => x.Delete(It.IsAny<PodcastEntity>()));
+            result.Setup(x => x.Update(It.IsAny<PodcastEntity>()));
 
             var all = this.GetListOfPodcasts();
-            PodcastEntity podcastEntity = this.fakePodcastEntityFactory.GetPodcastEntity().Object;
-
+            PodcastEntity podcastEntity = this.fakePodcastEntityFactory.GetPodcastEntity();
 
             result.Setup(x => x.All()).Returns(all.AsQueryable);
 
-            result.Setup(x => x.GetById(It.IsAny<object>())).Returns();
-            result.Setup(x => x.GetByName(It.IsAny<string>())).Returns(this.fakePodcastEntityFactory.GetPodcastEntity().Object);
+            result.Setup(x => x.GetById(It.IsAny<object>())).Returns(podcastEntity);
+            result.Setup(x => x.GetByName(It.IsAny<string>())).Returns(podcastEntity);
             return result;
         }
 
-        private ICollection<IPodcastEntity> GetListOfPodcasts()
+        internal ICollection<PodcastEntity> GetListOfPodcasts()
         {
-            ICollection<IPodcastEntity> all = new List<IPodcastEntity>();
-            all.Add(this.fakePodcastEntityFactory.GetPodcastEntity().Object);
-            all.Add(this.fakePodcastEntityFactory.GetPodcastEntity().Object);
-            all.Add(this.fakePodcastEntityFactory.GetPodcastEntity().Object);
+            PodcastEntity podcastEntity = this.fakePodcastEntityFactory.GetPodcastEntity();
+            ICollection<PodcastEntity> all = new List<PodcastEntity>();
+            all.Add(podcastEntity);
+            all.Add(podcastEntity);
+            all.Add(podcastEntity);
             return all;
         }
     }
