@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Web.Hosting;
 using System.Web.Mvc;
 
@@ -7,6 +8,7 @@ using Podcaster.Web.Models.Podcast;
 
 namespace Podcaster.Web.Controllers
 {
+    [ExcludeFromCodeCoverage]
     public class HomeController : Controller
     {
         public ActionResult About()

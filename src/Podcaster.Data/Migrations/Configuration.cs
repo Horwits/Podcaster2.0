@@ -1,4 +1,5 @@
 using System.Data.Entity.Migrations;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 using Microsoft.AspNet.Identity;
@@ -12,6 +13,7 @@ using Podcaster.Models;
 
 namespace Podcaster.Data.Migrations
 {
+    [ExcludeFromCodeCoverage]
     public sealed class Configuration : DbMigrationsConfiguration<PodcasterDbContext>
     {
         private UserManager<ApplicationUser> userManager;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics.CodeAnalysis;
 
 using Podcaster.Data.DataEF.Contracts;
 using Podcaster.Data.Repositories.Base;
@@ -9,6 +10,7 @@ using Podcaster.Models;
 
 namespace Podcaster.Data.DataEF
 {
+    [ExcludeFromCodeCoverage]
     public class PodcasterDataEF : IPodcasterDataEF
     {
         private readonly DbContext context;

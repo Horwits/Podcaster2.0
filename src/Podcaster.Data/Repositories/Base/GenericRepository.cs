@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 using Bytes2you.Validation;
@@ -8,6 +9,7 @@ using Podcaster.Data.Repositories.Contracts;
 
 namespace Podcaster.Data.Repositories.Base
 {
+    [ExcludeFromCodeCoverage]
     public class GenericRepository<T> : IRepository<T>
         where T : class
     {

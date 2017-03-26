@@ -1,4 +1,5 @@
 using System.Data.Entity;
+using System.Diagnostics.CodeAnalysis;
 
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -8,6 +9,7 @@ using Podcaster.Models.Contracts;
 
 namespace Podcaster.Data.DbContexts
 {
+    [ExcludeFromCodeCoverage]
     public class PodcasterDbContext : IdentityDbContext<ApplicationUser>, IPodcasterDbContext
     {
         public PodcasterDbContext()
