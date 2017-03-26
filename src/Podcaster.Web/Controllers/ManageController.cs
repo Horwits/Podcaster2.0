@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -13,6 +14,7 @@ using Podcaster.Web.Models.Manage;
 
 namespace Podcaster.Web.Controllers
 {
+    [ExcludeFromCodeCoverage]
     [Authorize]
     public class ManageController : Controller
     {

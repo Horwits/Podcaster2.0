@@ -120,7 +120,15 @@
     <Compile Include="Services\Podcast\DeleteShould.cs" />
     <Compile Include="Services\Podcast\AddShould.cs" />
     <Compile Include="Services\Podcast\ConstructorShould.cs" />
+    <Compile Include="WebClient\Controllers\Account\ExternalLoginFailureGetShould.cs" />
+    <Compile Include="WebClient\Controllers\Account\ForgotPasswordConfirmationGetShould.cs" />
+    <Compile Include="WebClient\Controllers\Account\ForgotPasswordGetShould.cs" />
+    <Compile Include="WebClient\Controllers\Account\RegisterGetShould.cs" />
+    <Compile Include="WebClient\Controllers\Account\ResetPasswordConfirmationGetShould.cs" />
+    <Compile Include="WebClient\Controllers\Manage\ChangePasswordGetShould.cs" />
     <Compile Include="WebClient\Controllers\Home\HomeControllerShould.cs" />
+    <Compile Include="WebClient\Controllers\Manage\ChangePasswordPostShould.cs" />
+    <Compile Include="WebClient\Controllers\Manage\DisableTwoFactorAuthenticationPostShould.cs" />
     <Compile Include="WebClient\Controllers\Manage\ManageControllerShould.cs" />
     <Compile Include="Models\ApplicationUser\ConstructorShould.cs" />
     <Compile Include="Models\ApplicationUser\GenerateUserIdentityShould.cs" />

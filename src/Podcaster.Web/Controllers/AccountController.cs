@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -14,6 +15,7 @@ using Podcaster.Web.Models.Account;
 
 namespace Podcaster.Web.Controllers
 {
+    [ExcludeFromCodeCoverage]
     [Authorize]
     public class AccountController : Controller
     {
