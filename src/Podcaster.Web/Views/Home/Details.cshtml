@@ -1,0 +1,64 @@
+﻿@model Podcaster.Web.Models.Podcast.PodcastDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="col-md-12 text-center">
+    <h4>PodcastDetailsViewModel</h4>
+    <hr />
+    <ul class="list-group">
+        <li>
+            <img src="@Model.ImageUrl" alt="PodcastImage" />
+        </li>
+
+        <li>
+            @Html.DisplayNameFor(model => model.Title)
+        </li>
+
+        <li>
+            @Html.DisplayFor(model => model.Title)
+        </li>
+
+        <li>
+            @Html.DisplayNameFor(model => model.Author)
+        </li>
+
+        <li>
+            @Html.DisplayFor(model => model.Author)
+        </li>
+
+        <li>
+            @Html.DisplayNameFor(model => model.LastUpdated)
+        </li>
+
+        <li>
+            @Html.DisplayFor(model => model.LastUpdated)
+        </li>
+
+        <li>
+            @Html.DisplayNameFor(model => model.IsExplicit)
+        </li>
+
+        <li>
+            @Html.DisplayFor(model => model.IsExplicit)
+        </li>
+
+        <li>
+            @Html.DisplayNameFor(model => model.Pricing)
+        </li>
+
+        <li>
+            @Html.DisplayFor(model => model.Pricing)
+        </li>
+    </ul>
+    <p>
+        @Model.FeedUrl
+    </p>
+        <iframe src="@Model.FeedUrl" width="500px" , height="500px"></iframe>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
