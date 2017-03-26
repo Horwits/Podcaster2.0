@@ -1,4 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Hosting;
+using System.Web.Mvc;
+
+using Podcaster.Web.Models;
+using Podcaster.Web.Models.Podcast;
 
 namespace Podcaster.Web.Controllers
 {
@@ -9,6 +14,7 @@ namespace Podcaster.Web.Controllers
             this.ViewBag.Message = "Your application description page.";
 
             return this.View();
+
         }
 
         public ActionResult Contact()
@@ -20,7 +26,26 @@ namespace Podcaster.Web.Controllers
 
         public ActionResult Index()
         {
-            return this.View();
+            if (this.User.Identity.IsAuthenticated)
+            {
+                var model = new TopTenPodcastsViewModel();
+
+                return this.View("_TopTen", model);
+            }
+            else
+            {
+                return this.View();
+            }
+        }
+
+        public ActionResult Details(PodcastDetailsViewModel model)
+        {
+            this.ViewBag.Details = "Your contact page.";
+
+            var modelBase = new TopTenPodcastsViewModel();
+            model = modelBase.TopTen.First();
+
+            return this.View("Details", model);
         }
     }
 }
