@@ -15,6 +15,7 @@ using Podcaster.Web.Models.Account;
 
 namespace Podcaster.Web.Controllers
 {
+    [ExcludeFromCodeCoverage]
     [Authorize]
     public class AccountController : Controller
     {

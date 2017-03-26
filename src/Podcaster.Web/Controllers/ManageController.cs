@@ -14,6 +14,7 @@ using Podcaster.Web.Models.Manage;
 
 namespace Podcaster.Web.Controllers
 {
+    [ExcludeFromCodeCoverage]
     [Authorize]
     public class ManageController : Controller
     {

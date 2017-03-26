@@ -36,7 +36,10 @@ namespace Podcaster.Services.Podcast
 
         public PodcastEntity FindById(Guid id)
         {
-            Guard.WhenArgument(id, nameof(id)).IsEmptyGuid().Throw();
+            if (id == Guid.Empty)
+            {
+                throw new ArgumentException(nameof(id));
+            }
 
             return this.data.Podcasts.GetById(id);
         }

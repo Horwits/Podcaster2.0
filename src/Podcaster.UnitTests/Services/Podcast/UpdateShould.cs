@@ -26,7 +26,7 @@ namespace Podcaster.UnitTests.Services.Podcast
         }
 
         [Test]
-        public void DoesNotThrow_WhenArgument_IsNotValid()
+        public void NotThrow_WhenArgument_IsNotValid()
         {
             // Arrange
             var fakeEntityFactory = new FakePodcastEntityFactory();
