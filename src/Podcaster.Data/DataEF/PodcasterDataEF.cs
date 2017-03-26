@@ -28,19 +28,11 @@ namespace Podcaster.Data.DataEF
             }
         }
 
-        public IRepository<Episode> Episodes
+        public IRepository<PodcastEntity> Podcasts
         {
             get
             {
-                return this.GetRepository<Episode>();
-            }
-        }
-
-        public IRepository<Podcast> Podcasts
-        {
-            get
-            {
-                return this.GetRepository<Podcast>();
+                return this.GetRepository<PodcastEntity>();
             }
         }
 

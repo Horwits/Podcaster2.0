@@ -5,11 +5,10 @@ using Podcaster.Models.Contracts;
 
 namespace Podcaster.Models
 {
-    public class Podcast : IPodcast
+    public class PodcastEntity : IPodcastEntity
     {
-        public Podcast()
+        public PodcastEntity()
         {
-            this.Episodes = new HashSet<Episode>();
             this.Subscribers = new HashSet<ApplicationUser>();
         }
 
@@ -33,7 +32,7 @@ namespace Podcaster.Models
 
         public string Title { get; set; }
 
-        public virtual ICollection<Episode> Episodes { get; set; }
+        public string FeedUrl { get; set; }
 
         public virtual ICollection<ApplicationUser> Subscribers { get; set; }
     }

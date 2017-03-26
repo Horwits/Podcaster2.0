@@ -79,6 +79,10 @@
     <Compile Include="Migrations\201703252115173_Seedusers.Designer.cs">
       <DependentUpon>201703252115173_Seedusers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703261008426_RemovedEpisode.cs" />
+    <Compile Include="Migrations\201703261008426_RemovedEpisode.Designer.cs">
+      <DependentUpon>201703261008426_RemovedEpisode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Base\GenericRepository.cs" />
@@ -111,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703252115173_Seedusers.resx">
       <DependentUpon>201703252115173_Seedusers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703261008426_RemovedEpisode.resx">
+      <DependentUpon>201703261008426_RemovedEpisode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

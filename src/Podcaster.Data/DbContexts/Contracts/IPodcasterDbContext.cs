@@ -7,8 +7,6 @@ namespace Podcaster.Data.DbContexts.Contracts
 {
     public interface IPodcasterDbContext
     {
-        IDbSet<Episode> Episodes { get; set; }
-
-        IDbSet<Podcast> Podcasts { get; set; }
+        IDbSet<PodcastEntity> Podcasts { get; set; }
     }
 }

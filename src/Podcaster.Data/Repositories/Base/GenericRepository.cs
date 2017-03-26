@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 
@@ -20,19 +19,9 @@ namespace Podcaster.Data.Repositories.Base
             this.DbSet = this.Context.Set<T>();
         }
 
-        protected IDbSet<T> DbSet { get; set; }
-
         protected DbContext Context { get; set; }
 
-        public virtual IQueryable<T> All()
-        {
-            return this.DbSet.AsQueryable();
-        }
-
-        public virtual T GetById(object id)
-        {
-            return this.DbSet.Find(id);
-        }
+        protected IDbSet<T> DbSet { get; set; }
 
         public virtual void Add(T entity)
         {
@@ -47,15 +36,9 @@ namespace Podcaster.Data.Repositories.Base
             }
         }
 
-        public virtual void Update(T entity)
+        public virtual IQueryable<T> All()
         {
-            DbEntityEntry entry = this.Context.Entry(entity);
-            if (entry.State == EntityState.Detached)
-            {
-                this.DbSet.Attach(entity);
-            }
-
-            entry.State = EntityState.Modified;
+            return this.DbSet.AsQueryable();
         }
 
         public virtual void Delete(T entity)
@@ -87,6 +70,27 @@ namespace Podcaster.Data.Repositories.Base
             DbEntityEntry entry = this.Context.Entry(entity);
 
             entry.State = EntityState.Detached;
+        }
+
+        public virtual T GetById(object id)
+        {
+            return this.DbSet.Find(id);
+        }
+
+        public T GetByName(string name)
+        {
+            return this.DbSet.Find(name);
+        }
+
+        public virtual void Update(T entity)
+        {
+            DbEntityEntry entry = this.Context.Entry(entity);
+            if (entry.State == EntityState.Detached)
+            {
+                this.DbSet.Attach(entity);
+            }
+
+            entry.State = EntityState.Modified;
         }
     }
 }

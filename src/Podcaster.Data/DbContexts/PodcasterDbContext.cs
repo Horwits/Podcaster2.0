@@ -15,9 +15,7 @@ namespace Podcaster.Data.DbContexts
         {
         }
 
-        public IDbSet<Episode> Episodes { get; set; }
-
-        public IDbSet<Podcast> Podcasts { get; set; }
+        public IDbSet<PodcastEntity> Podcasts { get; set; }
 
         public static PodcasterDbContext Create()
         {

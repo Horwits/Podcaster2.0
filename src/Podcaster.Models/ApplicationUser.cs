@@ -14,17 +14,17 @@ namespace Podcaster.Models
     {
         public ApplicationUser()
         {
-            this.Subscriptions = new HashSet<Podcast>();
+            this.Subscriptions = new HashSet<PodcastEntity>();
         }
 
         public ApplicationUser(string userName, string email)
             : base(userName)
         {
-            this.Subscriptions = new HashSet<Podcast>();
+            this.Subscriptions = new HashSet<PodcastEntity>();
             this.Email = email;
         }
 
-        private ICollection<Podcast> Subscriptions { get; set; }
+        private ICollection<PodcastEntity> Subscriptions { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

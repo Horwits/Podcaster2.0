@@ -9,9 +9,7 @@ namespace Podcaster.Data.DataEF.Contracts
     {
         DbContext Context { get; }
 
-        IRepository<Podcast> Podcasts { get; }
-
-        IRepository<Episode> Episodes { get; }
+        IRepository<PodcastEntity> Podcasts { get; }
 
         IRepository<ApplicationUser> Users { get; }
 

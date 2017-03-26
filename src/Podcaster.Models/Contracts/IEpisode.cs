@@ -16,6 +16,6 @@ namespace Podcaster.Models.Contracts
 
         Guid PodcastId { get; set; }
 
-        Podcast Podcast { get; set; }
+        PodcastEntity Podcast { get; set; }
     }
 }

@@ -25,7 +25,14 @@ namespace Podcaster.Data.Migrations
         protected override void Seed(PodcasterDbContext context)
         {
             this.userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            this.SeedRoles(context);
+            this.SeedUsers(context);
 
+           
+        }
+
+        private void SeedRoles(PodcasterDbContext context)
+        {
             if (!context.Roles.Any(role => role.Name == GlobalConstants.UserRole))
             {
                 var store = new RoleStore<IdentityRole>(context);
@@ -41,13 +48,16 @@ namespace Podcaster.Data.Migrations
                 var role = new IdentityRole(GlobalConstants.AdminRole);
                 manager.Create(role);
             }
+        }
 
-            if (context.Users.Count() != 10)
+        private void SeedUsers(PodcasterDbContext context)
+        {
+            if (!context.Users.Any())
             {
                 var fixture = new Fixture();
                 for (int i = 0; i < 10; i++)
                 {
-                    var mail = $"a{i}b{i*2}@abv.com";
+                    var mail = $"a{i}b{i * 2}@abv.com";
                     var user = new ApplicationUser { Email = mail, UserName = mail };
 
                     this.userManager.Create(user, "123456");
@@ -55,14 +65,7 @@ namespace Podcaster.Data.Migrations
                     this.userManager.AddToRole(user.Id, GlobalConstants.UserRole);
                 }
             }
-        }
 
-        private void SeedRoles(PodcasterDbContext context)
-        {
-        }
-
-        private void SeedUsers(PodcasterDbContext context)
-        {
         }
     }
 }

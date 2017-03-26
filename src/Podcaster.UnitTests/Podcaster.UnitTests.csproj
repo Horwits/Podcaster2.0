@@ -113,6 +113,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseTestClass.cs" />
+    <Compile Include="Services\Mocks\FakePodcastEntity.cs" />
+    <Compile Include="Services\Mocks\FakePodcasterDataFactory.cs" />
+    <Compile Include="Services\Mocks\FakeRepositoriesFactory.cs" />
+    <Compile Include="Services\Podcast\AddShould.cs" />
+    <Compile Include="Services\Podcast\ConstructorShould.cs" />
     <Compile Include="WebClient\Controllers\Home\HomeControllerShould.cs" />
     <Compile Include="WebClient\Controllers\Manage\ManageControllerShould.cs" />
     <Compile Include="Models\ApplicationUser\ConstructorShould.cs" />
@@ -135,9 +140,7 @@
     <Compile Include="WebClient\ViewModels\Manage\ManageLoginsViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Manage\SetPasswordViewModelTests.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Models\ApplicationUser\json1.json" />

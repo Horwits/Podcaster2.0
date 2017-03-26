@@ -67,6 +67,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Podcast\Contracts\IPodcastService.cs" />
+    <Compile Include="Podcast\PodcastService.cs" />
     <Compile Include="User\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,7 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Admin\" />
-    <Folder Include="Podcast\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

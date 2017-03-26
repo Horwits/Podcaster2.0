@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Podcaster.Models.Contracts
 {
-    public interface IPodcast
+    public interface IPodcastEntity
     {
+        Guid PodcastId { get; set; }
+
         string AuthorName { get; set; }
 
         string Copyright { get; set; }
@@ -18,6 +21,8 @@ namespace Podcaster.Models.Contracts
 
         string Title { get; set; }
 
-        ICollection<Episode> Episodes { get; set; }
+        string FeedUrl { get; set; }
+
+        bool IsExplicit { get; set; }
     }
 }

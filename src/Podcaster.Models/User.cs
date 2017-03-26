@@ -10,13 +10,13 @@ namespace Podcaster.Models
     {
         public User()
         {
-            this.Subscriptions = new HashSet<Podcast>();
+            this.Subscriptions = new HashSet<PodcastEntity>();
         }
 
         public string Name { get; set; }
 
         public DateTime? BirthDate { get; set; }
 
-        private ICollection<Podcast> Subscriptions { get; set; }
+        private ICollection<PodcastEntity> Subscriptions { get; set; }
     }
 }
