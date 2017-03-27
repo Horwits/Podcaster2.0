@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 
 using Ploeh.AutoFixture;
+
 using Podcaster.UnitTests.Base;
 using Podcaster.Web.Models.Manage;
 
@@ -17,11 +18,7 @@ namespace Podcaster.UnitTests.WebClient.ViewModels.Manage
             var phoneNumber = this.Fixture.Create<string>();
 
             // Act
-            var sut = new VerifyPhoneNumberViewModel()
-            {
-                Code = code,
-                PhoneNumber = phoneNumber
-            };
+            var sut = new VerifyPhoneNumberViewModel() { Code = code, PhoneNumber = phoneNumber };
 
             // Assert
             Assert.AreSame(code, sut.Code);

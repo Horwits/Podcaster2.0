@@ -149,7 +149,7 @@ namespace Podcaster.Web.Controllers
 
                 var user = new ApplicationUser(model.Email, model.Email);
 
-                    // this.applicationUserFactory(model.Email, model.Email)
+                // this.applicationUserFactory(model.Email, model.Email)
                 var result = await this.UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

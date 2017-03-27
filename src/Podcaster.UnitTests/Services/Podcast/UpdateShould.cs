@@ -37,8 +37,6 @@ namespace Podcaster.UnitTests.Services.Podcast
             Assert.Throws<ArgumentNullException>(() => new PodcastService(fakeData.Object).Update(null));
         }
 
-        // Arrange
-
         /*[Test]
         public void Call_AddMethod_OfPodcasterDataOnceWhenArgument_IsValid()
         {
@@ -54,6 +52,8 @@ namespace Podcaster.UnitTests.Services.Podcast
             sut.Add(entity);
             fakeData.Verify(() => fakeData.Object.Podcasts.Add(entity), Times.Once());
         }*/
+
+        // Arrange
         // Act
         // Assert
         /*[Test]

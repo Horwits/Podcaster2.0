@@ -1,14 +1,14 @@
 ﻿@model Podcaster.Models.PodcastEntity
 <div class="col-md-12 text-center">
 
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <section class="post-heading">
+<div class="panel panel-default">
+    <div class="panel-body">
+        <section class="post-heading">
             <div class="row">
                 <div class="col-md-11">
                     <div class="media">
                         <div class="media-left">
-                            <img class="media-object" src="@Model.ImageUrl" alt="Podcast Image" />
+                            <img class="media-object" src="@Model.ImageUrl" alt="Podcast Image"/>
                         </div>
                         <div class="media-body">
                             <h4>@Html.DisplayFor(model => model.Title)</h4>
@@ -23,11 +23,10 @@
                 else
                 {
                     @(Model.Pricing)<span>$</span>
-
                 }
 
             </div>
-        <iframe src="@Model.FeedUrl" width="500" height="500"></iframe>
+            <iframe src="@Model.FeedUrl" width="500" height="500"></iframe>
         </section>
     </div>
 </div>

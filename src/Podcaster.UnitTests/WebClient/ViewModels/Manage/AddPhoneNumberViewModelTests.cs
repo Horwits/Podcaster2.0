@@ -17,10 +17,7 @@ namespace Podcaster.UnitTests.WebClient.ViewModels.Manage
             var phoneNumber = this.Fixture.Create<string>();
 
             // Act
-            var sut = new AddPhoneNumberViewModel()
-            {
-                 Number = phoneNumber
-            };
+            var sut = new AddPhoneNumberViewModel() { Number = phoneNumber };
 
             // Assert
             Assert.AreSame(phoneNumber, sut.Number);
