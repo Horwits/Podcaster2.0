@@ -4,7 +4,7 @@ using Moq;
 
 using Podcaster.Data.DataEF.Contracts;
 
-namespace Podcaster.UnitTests.Services.Mocks
+namespace Podcaster.UnitTests.Mocks
 {
     [ExcludeFromCodeCoverage]
 

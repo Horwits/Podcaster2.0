@@ -26,8 +26,8 @@
                 <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 @if (User.Identity.IsAuthenticated)
                 {
-                    @*<li>@Html.ActionLink("Subscriptions", "Subscriptions", "Podcast")</li>
-                    <li>@Html.ActionLink("Search", "Search", "Search")</li>*@
+                    @*<li>@Html.ActionLink("Subscriptions", "Subscriptions", "Podcast")</li>*@
+                    <li>@Html.ActionLink("Search", "Index", "Search")</li>
                 }
 
             </ul>

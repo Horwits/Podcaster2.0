@@ -15,17 +15,16 @@ namespace Podcaster.Models
         }
 
         [Key]
-        public Guid PodcastId { get; set; }
+        public Guid Id { get; set; }
 
-        [StringLength(15)]
+        [StringLength(30)]
         public string AuthorName { get; set; }
 
-        public virtual ICollection<string> Categories { get; set; }
+        public ICollection<string> Categories { get; set; }
 
         public string Copyright { get; set; }
 
-        [StringLength(15)]
-
+        [StringLength(1000)]
         public string Description { get; set; }
 
         public string ImageUrl { get; set; }
@@ -38,7 +37,7 @@ namespace Podcaster.Models
         [Required]
         public decimal Pricing { get; set; }
 
-        [Index]
+        [StringLength(50)]
         public string Title { get; set; }
 
         [Required]

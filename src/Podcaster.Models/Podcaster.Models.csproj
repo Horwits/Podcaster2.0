@@ -79,7 +79,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs" />
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="Contracts\IApplicationSignInManager.cs" />
     <Compile Include="Contracts\IApplicationUser.cs" />
@@ -90,7 +89,6 @@
     <Compile Include="Contracts\IEpisode.cs" />
     <Compile Include="PodcastEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

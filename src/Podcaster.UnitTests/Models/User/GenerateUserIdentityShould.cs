@@ -2,7 +2,7 @@
 
 using Podcaster.UnitTests.Base;
 
-namespace Podcaster.UnitTests.Models.ApplicationUser
+namespace Podcaster.UnitTests.Models.User
 {
     [TestFixture]
     public class GenerateUserIdentityShould : BaseTestClass

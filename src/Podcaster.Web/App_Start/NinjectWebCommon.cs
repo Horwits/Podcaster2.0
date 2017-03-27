@@ -8,6 +8,8 @@ using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;
 
+using Podcaster.CompositionModules.Services;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Podcaster.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Podcaster.Web.App_Start.NinjectWebCommon), "Stop")]
 
@@ -65,6 +67,7 @@ namespace Podcaster.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Load(new DataModule());
-        }        
+            kernel.Load(new ServiceModule());
+        }
     }
 }

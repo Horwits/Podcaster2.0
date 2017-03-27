@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Linq;
 
 using Bytes2you.Validation;
 
 using Podcaster.Data.DataEF.Contracts;
 using Podcaster.Models;
-using Podcaster.Models.Contracts;
 using Podcaster.Services.Podcast.Contracts;
 
 namespace Podcaster.Services.Podcast
@@ -25,13 +25,15 @@ namespace Podcaster.Services.Podcast
             Guard.WhenArgument(podcast, nameof(podcast)).IsNull().Throw();
 
             this.data.Podcasts.Add(podcast);
+            this.data.SaveChanges();
         }
 
         public void Delete(PodcastEntity podcast)
         {
             Guard.WhenArgument(podcast, nameof(podcast)).IsNull().Throw();
 
-            this.data.Podcasts.Add(podcast);
+            this.data.Podcasts.Delete(podcast);
+            this.data.SaveChanges();
         }
 
         public PodcastEntity FindById(Guid id)
@@ -48,14 +50,15 @@ namespace Podcaster.Services.Podcast
         {
             Guard.WhenArgument(title, nameof(title)).IsNullOrEmpty().IsNullOrWhiteSpace().Throw();
 
-            return this.data.Podcasts.GetByName(title);
+            return this.data.Podcasts.All().FirstOrDefault(x => x.Title.Contains(title));
         }
 
         public void Update(PodcastEntity podcast)
         {
             Guard.WhenArgument(podcast, nameof(podcast)).IsNull().Throw();
 
-            this.data.Podcasts.Add(podcast);
+            this.data.Podcasts.Update(podcast);
+            this.data.SaveChanges();
         }
     }
 }

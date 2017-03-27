@@ -10,7 +10,7 @@ namespace Podcaster.Services.User.Contracts
 
         void Delete(ApplicationUser user);
 
-        ApplicationUser FindById(Guid id);
+        ApplicationUser FindById(Guid? id);
 
         void Update(ApplicationUser user);
     }

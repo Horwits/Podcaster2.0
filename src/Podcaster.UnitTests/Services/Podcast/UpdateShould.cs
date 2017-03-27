@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 using Podcaster.Services.Podcast;
 using Podcaster.UnitTests.Base;
-using Podcaster.UnitTests.Services.Mocks;
+using Podcaster.UnitTests.Mocks;
 
 namespace Podcaster.UnitTests.Services.Podcast
 {

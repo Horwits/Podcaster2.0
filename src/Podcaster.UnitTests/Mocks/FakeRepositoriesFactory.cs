@@ -7,7 +7,7 @@ using Moq;
 using Podcaster.Data.Repositories.Contracts;
 using Podcaster.Models;
 
-namespace Podcaster.UnitTests.Services.Mocks
+namespace Podcaster.UnitTests.Mocks
 {
     [ExcludeFromCodeCoverage]
     internal class FakeRepositoriesFactory

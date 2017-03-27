@@ -1,0 +1,38 @@
+﻿@model Podcaster.Web.Models.Podcast.PodcastDetailsViewModel
+
+<div class="col-md-12 text-center">
+    <h4>PodcastDetailsViewModel</h4>
+    <hr/>
+    <ul class="list-group">
+        <li>
+            <img src="@Model.ImageUrl" alt="PodcastImage"/>
+        </li>
+
+
+        <li>
+            @Html.DisplayFor(model => model.Title)
+        </li>
+
+        <li>
+            @Html.DisplayFor(model => model.Author)
+        </li>
+
+        <li>
+            @Html.DisplayFor(model => model.Description)
+        </li>
+
+
+        <li>
+            @Html.DisplayFor(model => model.IsExplicit)
+        </li>
+
+
+        <li>
+            @Html.DisplayFor(model => model.Pricing)
+        </li>
+    </ul>
+    <p>
+        @Model.FeedUrl
+    </p>
+    <iframe src="@Model.FeedUrl" width="500" height="500"></iframe>
+</div>

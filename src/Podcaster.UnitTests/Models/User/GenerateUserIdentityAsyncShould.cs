@@ -11,7 +11,7 @@ using Ploeh.AutoFixture;
 
 using Podcaster.UnitTests.Base;
 
-namespace Podcaster.UnitTests.Models.ApplicationUser
+namespace Podcaster.UnitTests.Models.User
 {
     [TestFixture]
     public class GenerateUserIdentityAsyncShould : BaseTestClass

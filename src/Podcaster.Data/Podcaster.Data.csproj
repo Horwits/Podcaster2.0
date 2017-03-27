@@ -83,6 +83,14 @@
     <Compile Include="Migrations\201703261008426_RemovedEpisode.Designer.cs">
       <DependentUpon>201703261008426_RemovedEpisode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703261936255_PodcastDataAnnotations.cs" />
+    <Compile Include="Migrations\201703261936255_PodcastDataAnnotations.Designer.cs">
+      <DependentUpon>201703261936255_PodcastDataAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703262003169_PodcastDataAnnotationsUpdate.cs" />
+    <Compile Include="Migrations\201703262003169_PodcastDataAnnotationsUpdate.Designer.cs">
+      <DependentUpon>201703262003169_PodcastDataAnnotationsUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Base\GenericRepository.cs" />
@@ -118,6 +126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703261008426_RemovedEpisode.resx">
       <DependentUpon>201703261008426_RemovedEpisode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703261936255_PodcastDataAnnotations.resx">
+      <DependentUpon>201703261936255_PodcastDataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703262003169_PodcastDataAnnotationsUpdate.resx">
+      <DependentUpon>201703262003169_PodcastDataAnnotationsUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

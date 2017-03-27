@@ -1,15 +1,16 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using NUnit.Framework;
+
 using Ploeh.AutoFixture;
 
 using Podcaster.Services.Podcast;
 using Podcaster.UnitTests.Base;
-using Podcaster.UnitTests.Services.Mocks;
+using Podcaster.UnitTests.Mocks;
 
 namespace Podcaster.UnitTests.Services.Podcast
 {

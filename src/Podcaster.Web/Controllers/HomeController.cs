@@ -11,14 +11,15 @@ namespace Podcaster.Web.Controllers
     [ExcludeFromCodeCoverage]
     public class HomeController : Controller
     {
+        /*[OutputCache(Duration = 43200)]*/
         public ActionResult About()
         {
             this.ViewBag.Message = "Your application description page.";
 
             return this.View();
-
         }
 
+        /*[OutputCache(Duration = 43200)]*/
         public ActionResult Contact()
         {
             this.ViewBag.Message = "Your contact page.";
@@ -26,28 +27,10 @@ namespace Podcaster.Web.Controllers
             return this.View();
         }
 
+        /*[OutputCache(Duration = 60 * 60)]*/
         public ActionResult Index()
         {
-            if (this.User.Identity.IsAuthenticated)
-            {
-                var model = new TopTenPodcastsViewModel();
-
-                return this.View("_TopTen", model);
-            }
-            else
-            {
-                return this.View();
-            }
-        }
-
-        public ActionResult Details(PodcastDetailsViewModel model)
-        {
-            this.ViewBag.Details = "Your contact page.";
-
-            var modelBase = new TopTenPodcastsViewModel();
-            model = modelBase.TopTen.First();
-
-            return this.View("Details", model);
+            return this.View();
         }
     }
 }

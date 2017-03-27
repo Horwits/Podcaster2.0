@@ -24,7 +24,7 @@ namespace Podcaster.Models
             this.Email = email;
         }
 
-        public ICollection<PodcastEntity> Subscriptions { get; set; }
+        public virtual ICollection<PodcastEntity> Subscriptions { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

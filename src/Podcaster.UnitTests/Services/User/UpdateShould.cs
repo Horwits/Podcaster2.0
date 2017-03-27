@@ -12,7 +12,6 @@ using Podcaster.Models;
 using Podcaster.Services.Podcast;
 using Podcaster.Services.User;
 using Podcaster.UnitTests.Base;
-using Podcaster.UnitTests.Services.Mocks;
 
 namespace Podcaster.UnitTests.Services.User
 {

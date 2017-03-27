@@ -201,12 +201,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
+    <Compile Include="Areas\Administrator\Controllers\ManagePodcastController.cs" />
     <Compile Include="Areas\Error\Controllers\ErrorController.cs" />
     <Compile Include="Areas\Error\ErrorAreaRegistration.cs" />
     <Compile Include="Attributes\CustomAuthorizeAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -228,13 +230,13 @@
     <Compile Include="Models\Manage\SetPasswordViewModel.cs" />
     <Compile Include="Models\Manage\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="Models\Podcast\PodcastDetailsViewModel.cs" />
-    <Compile Include="Models\TopTenPodcastsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Imgs\header.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -245,7 +247,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Areas\Administrator\Views\web.config" />
-    <Content Include="Areas\Error\Views\web.config" />
+    <Content Include="Areas\Administrator\Views\ManagePodcast\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -292,14 +294,13 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NotAuthorized.cshtml" />
-    <Content Include="Views\Home\_TopTen.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Shared\_PodcastDetailsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Administrator\Controllers\" />
     <Folder Include="Areas\Administrator\Views\Shared\" />
-    <Folder Include="Areas\Error\Models\" />
-    <Folder Include="Areas\Error\Views\Shared\" />
+    <Folder Include="Models\Search\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
@@ -337,6 +338,10 @@
     <ProjectReference Include="..\Podcaster.Models\Podcaster.Models.csproj">
       <Project>{1f83d194-4433-4e87-90cd-8f640b6a03bf}</Project>
       <Name>Podcaster.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Podcaster.Services\Podcaster.Services.csproj">
+      <Project>{33400b7d-e029-4a05-921c-4cc7b303c555}</Project>
+      <Name>Podcaster.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

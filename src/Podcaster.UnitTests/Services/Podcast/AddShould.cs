@@ -4,9 +4,12 @@ using Moq;
 
 using NUnit.Framework;
 
+using Podcaster.Data.DataEF.Contracts;
+using Podcaster.Data.Repositories.Contracts;
+using Podcaster.Models;
 using Podcaster.Services.Podcast;
 using Podcaster.UnitTests.Base;
-using Podcaster.UnitTests.Services.Mocks;
+using Podcaster.UnitTests.Mocks;
 
 namespace Podcaster.UnitTests.Services.Podcast
 {
@@ -40,31 +43,25 @@ namespace Podcaster.UnitTests.Services.Podcast
             Assert.DoesNotThrow(() => sut.Delete(entity));
         }
 
+        /*
+         //Integration test
+                [Test]
+                public void Call_AddMethod_OfPodcasterDataOnceWhenArgument_IsValid()
+                {
+                    // Arrange
+                    var fakeRepository = new Mock<IRepository<PodcastEntity>>();
+                    fakeRepository.Setup(x => x.Add(It.IsAny<PodcastEntity>()));
+                    var fakeData = new Mock<IPodcasterDataEF>();
+                    fakeData.Setup(x => x.Podcasts).Returns(fakeRepository.Object);
 
-        /*[Test]
-        public void Call_AddMethod_OfPodcasterDataOnceWhenArgument_IsValid()
-        {
-            // Arrange
-            var fakeEntityFactory = new FakePodcastEntityFactory();
-            var repoFactory = new FakeRepositoriesFactory(fakeEntityFactory);
-            IMock<IPodcasterDataEF> fakeData = new FakePodcasterDataFactory(It.IsAny<FakeRepositoriesFactory>()).GetPodcasterData();
+                    var entity = new FakePodcastEntityFactory().GetPodcastEntity();
+                    var sut = new PodcastService(fakeData.Object);
 
-            var entity = fakeEntityFactory.GetPodcastEntity();
-            var sut = new PodcastService(fakeData.Object);
+                    // Act
+                    sut.Add(entity);
 
-            // Act & Assert
-            sut.Add(entity);
-            fakeData.Verify(() => fakeData.Object.Podcasts.Add(entity), Times.Once());
-        }*/
-
-        // Arrange
-        // Act
-        // Assert
-        /*[Test]
-        public void Throw_WhenArgument_IsNull()
-        {
-            // Arrange, Act & Assert
-            Assert.Throws<ArgumentNullException>(() => new PodcastService(null));
-        }*/
+                    // Assert
+                    fakeData.Verify(x => x.Podcasts.Add(It.IsAny<PodcastEntity>()), Times.Once());
+                }*/
     }
 }

@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Podcaster.UnitTests.Models.ApplicationUser
+namespace Podcaster.UnitTests.Models.User
 {
     [TestFixture]
     public class ConstructorShould

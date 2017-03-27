@@ -113,9 +113,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseTestClass.cs" />
-    <Compile Include="Services\Mocks\FakePodcastEntityFactory.cs" />
-    <Compile Include="Services\Mocks\FakePodcasterDataFactory.cs" />
-    <Compile Include="Services\Mocks\FakeRepositoriesFactory.cs" />
+    <Compile Include="Models\Podcast\ConstructorShould.cs" />
+    <Compile Include="Mocks\FakePodcastEntityFactory.cs" />
+    <Compile Include="Mocks\FakePodcasterDataFactory.cs" />
+    <Compile Include="Mocks\FakeRepositoriesFactory.cs" />
+    <Compile Include="Models\Podcast\SettersShouldSet.cs" />
     <Compile Include="Services\Podcast\FindByTitleShuld.cs" />
     <Compile Include="Services\Podcast\FindByIdShould.cs" />
     <Compile Include="Services\Podcast\UpdateShould.cs" />
@@ -139,9 +141,9 @@
     <Compile Include="WebClient\Controllers\Manage\ChangePasswordPostShould.cs" />
     <Compile Include="WebClient\Controllers\Manage\DisableTwoFactorAuthenticationPostShould.cs" />
     <Compile Include="WebClient\Controllers\Manage\ManageControllerShould.cs" />
-    <Compile Include="Models\ApplicationUser\ConstructorShould.cs" />
-    <Compile Include="Models\ApplicationUser\GenerateUserIdentityShould.cs" />
-    <Compile Include="Models\ApplicationUser\GenerateUserIdentityAsyncShould.cs" />
+    <Compile Include="Models\User\ConstructorShould.cs" />
+    <Compile Include="Models\User\GenerateUserIdentityShould.cs" />
+    <Compile Include="Models\User\GenerateUserIdentityAsyncShould.cs" />
     <Compile Include="Models\Factories\ModelsFactory\CreateUserShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebClient\ViewModels\Account\ExternalLoginConfirmationViewModelTests.cs" />
@@ -158,11 +160,12 @@
     <Compile Include="WebClient\ViewModels\Manage\IndexViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Manage\ManageLoginsViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Manage\SetPasswordViewModelTests.cs" />
+    <Compile Include="WebClient\ViewModels\Podcast\PodcastDetailsViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Models\ApplicationUser\json1.json" />
+    <None Include="Models\User\json1.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

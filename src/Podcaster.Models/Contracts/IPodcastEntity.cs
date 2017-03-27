@@ -5,7 +5,7 @@ namespace Podcaster.Models.Contracts
 {
     public interface IPodcastEntity
     {
-        Guid PodcastId { get; set; }
+        Guid Id { get; set; }
 
         string AuthorName { get; set; }
 

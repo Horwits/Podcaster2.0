@@ -24,16 +24,18 @@ namespace Podcaster.Services.User
             Guard.WhenArgument(user, nameof(user)).IsNull().Throw();
 
             this.data.Users.Add(user);
+            this.data.SaveChanges();
         }
 
         public void Delete(ApplicationUser user)
         {
             Guard.WhenArgument(user, nameof(user)).IsNull().Throw();
 
-            this.data.Users.Add(user);
+            this.data.Users.Delete(user);
+            this.data.SaveChanges();
         }
 
-        public ApplicationUser FindById(Guid id)
+        public ApplicationUser FindById(Guid? id)
         {
             if (id == Guid.Empty)
             {
@@ -47,7 +49,8 @@ namespace Podcaster.Services.User
         {
             Guard.WhenArgument(user, nameof(user)).IsNull().Throw();
 
-            this.data.Users.Add(user);
+            this.data.Users.Update(user);
+            this.data.SaveChanges();
         }
     }
 }
