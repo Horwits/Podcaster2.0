@@ -134,6 +134,7 @@
     <Compile Include="WebClient\Controllers\Account\ForgotPasswordGetShould.cs" />
     <Compile Include="WebClient\Controllers\Account\RegisterGetShould.cs" />
     <Compile Include="WebClient\Controllers\Account\ResetPasswordConfirmationGetShould.cs" />
+    <Compile Include="WebClient\Controllers\Error\ErrorControllerIndexShould.cs" />
     <Compile Include="WebClient\Controllers\Manage\AddPhoneNumberGetShould - Copy.cs" />
     <Compile Include="WebClient\Controllers\Manage\SetPasswordGetShould.cs" />
     <Compile Include="WebClient\Controllers\Manage\ChangePasswordGetShould.cs" />
@@ -155,11 +156,14 @@
     <Compile Include="WebClient\ViewModels\Account\ResetPasswordViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Account\SendCodeViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Account\VerifyCodeViewModelTests.cs" />
+    <Compile Include="WebClient\ViewModels\Manage\AddPhoneNumberViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Manage\ChangePasswordViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Manage\ConfigureTwoFactorViewModelTests.cs" />
+    <Compile Include="WebClient\ViewModels\Manage\FactorViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Manage\IndexViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Manage\ManageLoginsViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Manage\SetPasswordViewModelTests.cs" />
+    <Compile Include="WebClient\ViewModels\Manage\VerifyPhoneNumberViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Podcast\PodcastDetailsViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Search\SearchViewModelTests.cs" />
   </ItemGroup>
