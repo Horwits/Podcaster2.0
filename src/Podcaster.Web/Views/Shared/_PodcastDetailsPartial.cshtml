@@ -1,38 +1,33 @@
 ﻿@model Podcaster.Models.PodcastEntity
-
 <div class="col-md-12 text-center">
-    <h4>PodcastDetailsViewModel</h4>
-    <hr/>
-    <ul class="list-group">
-        <li>
-            <img src="@Model.ImageUrl" alt="PodcastImage"/>
-        </li>
 
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <section class="post-heading">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object" src="@Model.ImageUrl" alt="Podcast Image" />
+                        </div>
+                        <div class="media-body">
+                            <h4>@Html.DisplayFor(model => model.Title)</h4>
+                        </div>
+                    </div>
+                </div>
 
-        <li>
-            @Html.DisplayFor(model => model.Title)
-        </li>
+                @if (Model.Pricing == 0m)
+                {
+                    <p>Free</p>
+                }
+                else
+                {
+                    @(Model.Pricing)<span>$</span>
 
-        <li>
-            @Html.DisplayFor(model => model.AuthorName)
-        </li>
+                }
 
-        <li>
-            @Html.DisplayFor(model => model.Description)
-        </li>
-
-
-        <li>
-            @Html.DisplayFor(model => model.IsExplicit)
-        </li>
-
-
-        <li>
-            @Html.DisplayFor(model => model.Pricing)
-        </li>
-    </ul>
-    <p>
-        @Model.FeedUrl
-    </p>
-    <iframe src="@Model.FeedUrl" width="500" height="500"></iframe>
+            </div>
+        <iframe src="@Model.FeedUrl" width="500" height="500"></iframe>
+        </section>
+    </div>
 </div>
