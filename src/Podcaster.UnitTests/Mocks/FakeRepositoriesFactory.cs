@@ -19,6 +19,16 @@ namespace Podcaster.UnitTests.Mocks
             this.fakePodcastEntityFactory = fakePodcastEntityFactory;
         }
 
+        internal ICollection<PodcastEntity> GetListOfPodcasts()
+        {
+            PodcastEntity podcastEntity = this.fakePodcastEntityFactory.GetPodcastEntity();
+            ICollection<PodcastEntity> all = new List<PodcastEntity>();
+            all.Add(podcastEntity);
+            all.Add(podcastEntity);
+            all.Add(podcastEntity);
+            return all;
+        }
+
         internal Mock<IRepository<PodcastEntity>> GetPodcastRepository()
         {
             var result = new Mock<IRepository<PodcastEntity>>(MockBehavior.Strict);
@@ -34,16 +44,6 @@ namespace Podcaster.UnitTests.Mocks
             result.Setup(x => x.GetById(It.IsAny<object>())).Returns(podcastEntity);
             result.Setup(x => x.GetByName(It.IsAny<string>())).Returns(podcastEntity);
             return result;
-        }
-
-        internal ICollection<PodcastEntity> GetListOfPodcasts()
-        {
-            PodcastEntity podcastEntity = this.fakePodcastEntityFactory.GetPodcastEntity();
-            ICollection<PodcastEntity> all = new List<PodcastEntity>();
-            all.Add(podcastEntity);
-            all.Add(podcastEntity);
-            all.Add(podcastEntity);
-            return all;
         }
     }
 }

@@ -161,6 +161,7 @@
     <Compile Include="WebClient\ViewModels\Manage\ManageLoginsViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Manage\SetPasswordViewModelTests.cs" />
     <Compile Include="WebClient\ViewModels\Podcast\PodcastDetailsViewModelTests.cs" />
+    <Compile Include="WebClient\ViewModels\Search\SearchViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

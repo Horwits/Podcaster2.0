@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Web;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Web.Mvc;
 
 using Podcaster.Services.Podcast.Contracts;
-using Podcaster.Web.Models.Podcast;
 
 namespace Podcaster.Web.Controllers
 {
     [ExcludeFromCodeCoverage]
+    [Authorize]
     public class SearchController : Controller
     {
         private readonly IPodcastService service;
@@ -26,31 +22,24 @@ namespace Podcaster.Web.Controllers
             return this.View();
         }
 
-
-        // TODO: AUTH
+        /*// TODO: AUTH
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index(string title)
         {
+            if (title == null)
+            {
+                return this.View();
+            }
 
-            if (ValidateRequest)
+            if (this.ModelState.IsValid)
             {
                 var podcastEntity = this.service.FindByTitle(title);
-                var podcastViewModel = new PodcastDetailsViewModel
-                {
-                    Author = podcastEntity.AuthorName,
-                    FeedUrl = podcastEntity.FeedUrl,
-                    Pricing = podcastEntity.Pricing,
-                    Id = podcastEntity.Id,
-                    ImageUrl = podcastEntity.ImageUrl,
-                    IsExplicit = podcastEntity.IsExplicit,
-                    Description = podcastEntity.Description
-                };
 
-                return this.PartialView("_PodcastDetailsPartial", podcastViewModel);
+                return this.PartialView("_PodcastDetailsPartial", podcastEntity);
             }
 
             return this.View();
-        }
+        }*/
     }
 }

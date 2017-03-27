@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using Moq;
 
@@ -9,16 +9,29 @@ using Ploeh.AutoFixture;
 using Podcaster.Data.DataEF.Contracts;
 using Podcaster.Data.Repositories.Contracts;
 using Podcaster.Models;
-using Podcaster.Services.Podcast;
 using Podcaster.Services.User;
 using Podcaster.UnitTests.Base;
 
 namespace Podcaster.UnitTests.Services.User
 {
     [TestFixture]
-    public class DeleteShould
-         : BaseTestClass
+    public class DeleteShould : BaseTestClass
     {
+        [Test]
+        public void NotThrow_WhenArgument_IsNotValid()
+        {
+            // Arrange
+            var fakeRepository = new Mock<IRepository<ApplicationUser>>();
+            var fakeData = new Mock<IPodcasterDataEF>();
+            fakeData.Setup(x => x.Users).Returns(fakeRepository.Object);
+
+            var sut = new UserService(fakeData.Object);
+            var entity = this.Fixture.Build<ApplicationUser>().Without(p => p.Subscriptions).Create();
+
+            // Act & Assert
+            Assert.DoesNotThrow(() => sut.Delete(entity));
+        }
+
         [Test]
         public void Throw_WhenArgument_IsNotValid()
         {
@@ -29,21 +42,7 @@ namespace Podcaster.UnitTests.Services.User
             Assert.Throws<ArgumentNullException>(() => new UserService(fakeData.Object).Delete(null));
         }
 
-        [Test]
-        public void NotThrow_WhenArgument_IsNotValid()
-        {
-            // Arrange
-            var fakeRepository = new Mock<IRepository<ApplicationUser>>();
-            var fakeData = new Mock<IPodcasterDataEF>();
-            fakeData.Setup(x => x.Users).Returns(fakeRepository.Object);
-
-            var sut = new UserService(fakeData.Object);
-            var entity = this.Fixture.Build<Podcaster.Models.ApplicationUser>().Without(p => p.Subscriptions).Create();
-
-            // Act & Assert
-            Assert.DoesNotThrow(() => sut.Delete(entity));
-        }
-
+        // Arrange
 
         /*[Test]
         public void Call_AddMethod_OfPodcasterDataOnceWhenArgument_IsValid()
@@ -60,8 +59,6 @@ namespace Podcaster.UnitTests.Services.User
             sut.Add(entity);
             fakeData.Verify(() => fakeData.Object.Podcasts.Add(entity), Times.Once());
         }*/
-
-        // Arrange
         // Act
         // Assert
         /*[Test]

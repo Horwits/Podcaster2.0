@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 
 using Podcaster.Web.Controllers;
 
@@ -14,7 +14,7 @@ namespace Podcaster.UnitTests.WebClient.Controllers.Manage
         {
             // Arrange
             var controller = new ManageController();
-            
+
             // Act & Assert
             controller.WithCallTo(x => x.ChangePassword()).ShouldRenderDefaultView();
         }

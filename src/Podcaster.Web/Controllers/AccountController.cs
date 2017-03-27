@@ -10,7 +10,6 @@ using Microsoft.Owin.Security;
 
 using Podcaster.Identity;
 using Podcaster.Models;
-using Podcaster.Web.Models;
 using Podcaster.Web.Models.Account;
 
 namespace Podcaster.Web.Controllers
@@ -148,7 +147,9 @@ namespace Podcaster.Web.Controllers
                     return this.View("ExternalLoginFailure");
                 }
 
-                var user = new ApplicationUser(model.Email, model.Email); // this.applicationUserFactory(model.Email, model.Email)
+                var user = new ApplicationUser(model.Email, model.Email);
+
+                    // this.applicationUserFactory(model.Email, model.Email)
                 var result = await this.UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

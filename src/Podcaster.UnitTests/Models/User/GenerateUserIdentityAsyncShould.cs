@@ -9,6 +9,7 @@ using NUnit.Framework;
 
 using Ploeh.AutoFixture;
 
+using Podcaster.Models;
 using Podcaster.UnitTests.Base;
 
 namespace Podcaster.UnitTests.Models.User
@@ -20,12 +21,12 @@ namespace Podcaster.UnitTests.Models.User
         public void Call_GenerateUserIdentity_Once()
         {
             // Arrange
-            var userStore = new Mock<IUserStore<Podcaster.Models.ApplicationUser>>();
+            var userStore = new Mock<IUserStore<ApplicationUser>>();
 
-            var userManager = new Mock<UserManager<Podcaster.Models.ApplicationUser>>(userStore.Object);
+            var userManager = new Mock<UserManager<ApplicationUser>>(userStore.Object);
 
             var authType = this.Fixture.Create<string>();
-            var user = this.Fixture.Build<Podcaster.Models.ApplicationUser>().Without(p => p.Subscriptions).Create();
+            var user = this.Fixture.Build<ApplicationUser>().Without(p => p.Subscriptions).Create();
 
             // Act
             var result = user.GenerateUserIdentityAsync(userManager.Object);

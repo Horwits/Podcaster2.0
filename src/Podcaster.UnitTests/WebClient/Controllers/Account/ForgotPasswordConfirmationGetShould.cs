@@ -13,7 +13,9 @@ namespace Podcaster.UnitTests.WebClient.Controllers.Account
         public void RenderDefaultView()
         {
             var controller = new AccountController();
-            controller.WithCallTo(x => x.ForgotPasswordConfirmation()).ShouldRenderDefaultView(); //ForgotPasswordConfirmation
+            controller.WithCallTo(x => x.ForgotPasswordConfirmation()).ShouldRenderDefaultView();
+
+                // ForgotPasswordConfirmation
         }
     }
 }

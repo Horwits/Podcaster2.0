@@ -5,13 +5,10 @@ using Moq;
 
 using NUnit.Framework;
 
-using Ploeh.AutoFixture;
-
 using Podcaster.Identity;
 using Podcaster.Models;
 using Podcaster.UnitTests.Base;
 using Podcaster.Web.Controllers;
-using Podcaster.Web.Models.Manage;
 
 using TestStack.FluentMVCTesting;
 

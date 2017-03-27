@@ -4,18 +4,18 @@ namespace Podcaster.Models.Contracts
 {
     public interface IEpisode
     {
+        DateTime Date { get; set; }
+
         string Description { get; set; }
 
         Guid EpisodeId { get; set; }
 
         string ImageUrl { get; set; }
 
-        string Title { get; set; }
-
-        DateTime Date { get; set; }
+        PodcastEntity Podcast { get; set; }
 
         Guid PodcastId { get; set; }
 
-        PodcastEntity Podcast { get; set; }
+        string Title { get; set; }
     }
 }

@@ -11,6 +11,13 @@ namespace Podcaster.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.LowercaseUrls = true;
+
+            routes.MapRoute(
+                name: "Search",
+                url: "{controller}/{action}/{title}",
+                defaults: new { controller = "Search", action = "Index", title = UrlParameter.Optional });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

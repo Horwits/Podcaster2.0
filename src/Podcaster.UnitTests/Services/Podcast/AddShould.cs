@@ -1,12 +1,7 @@
 ﻿using System;
 
-using Moq;
-
 using NUnit.Framework;
 
-using Podcaster.Data.DataEF.Contracts;
-using Podcaster.Data.Repositories.Contracts;
-using Podcaster.Models;
 using Podcaster.Services.Podcast;
 using Podcaster.UnitTests.Base;
 using Podcaster.UnitTests.Mocks;
@@ -14,21 +9,8 @@ using Podcaster.UnitTests.Mocks;
 namespace Podcaster.UnitTests.Services.Podcast
 {
     [TestFixture]
-    public class DeleteShould
-         : BaseTestClass
+    public class DeleteShould : BaseTestClass
     {
-        [Test]
-        public void Throw_WhenArgument_IsNotValid()
-        {
-            // Arrange
-            var fakeEntityFactory = new FakePodcastEntityFactory();
-            var repoFaktory = new FakeRepositoriesFactory(fakeEntityFactory);
-            var fakeData = new FakePodcasterDataFactory(repoFaktory).GetPodcasterData();
-
-            // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => new PodcastService(fakeData.Object).Delete(null));
-        }
-
         [Test]
         public void DoesNotThrow_WhenArgument_IsNotValid()
         {
@@ -41,6 +23,18 @@ namespace Podcaster.UnitTests.Services.Podcast
 
             // Act & Assert
             Assert.DoesNotThrow(() => sut.Delete(entity));
+        }
+
+        [Test]
+        public void Throw_WhenArgument_IsNotValid()
+        {
+            // Arrange
+            var fakeEntityFactory = new FakePodcastEntityFactory();
+            var repoFaktory = new FakeRepositoriesFactory(fakeEntityFactory);
+            var fakeData = new FakePodcasterDataFactory(repoFaktory).GetPodcasterData();
+
+            // Act & Assert
+            Assert.Throws<ArgumentNullException>(() => new PodcastService(fakeData.Object).Delete(null));
         }
 
         /*

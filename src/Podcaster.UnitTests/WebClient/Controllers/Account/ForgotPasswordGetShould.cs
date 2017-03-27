@@ -13,7 +13,7 @@ namespace Podcaster.UnitTests.WebClient.Controllers.Account
         public void RenderDefaultView()
         {
             var controller = new AccountController();
-            controller.WithCallTo(x => x.ForgotPassword()).ShouldRenderDefaultView(); 
+            controller.WithCallTo(x => x.ForgotPassword()).ShouldRenderDefaultView();
         }
     }
 }

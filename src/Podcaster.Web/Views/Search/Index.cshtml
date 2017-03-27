@@ -1,25 +1,31 @@
-﻿@{
+﻿@model Podcaster.Web.Models.Search.SearchViewModel
+
+@{
     ViewBag.Title = "Search";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Search</h2>
-
 @using (Html.BeginForm("Index", "Search", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, string.Empty, new { @class = "text-danger" })
     <div class="form-group">
-        @Html.LabelFor(m => m.Title, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.SearchTitle, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Title, string.Empty, new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.SearchTitle, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.SearchTitle, string.Empty, new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Log in" class="btn btn-default"/>
+        <div class="col-md-10">
+            <input type="submit" value="Search" class="btn btn-primary"/>
         </div>
     </div>
 }
+
+@*@if (Model.Podcast != null)
+    {
+        @Html.Partial("_PodcastDetailsPartial", Model.Podcast)
+    }*@

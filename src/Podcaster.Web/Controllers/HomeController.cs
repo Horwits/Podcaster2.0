@@ -1,10 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Web.Hosting;
 using System.Web.Mvc;
-
-using Podcaster.Web.Models;
-using Podcaster.Web.Models.Podcast;
 
 namespace Podcaster.Web.Controllers
 {
@@ -30,6 +25,11 @@ namespace Podcaster.Web.Controllers
         /*[OutputCache(Duration = 60 * 60)]*/
         public ActionResult Index()
         {
+            if (this.User.Identity.IsAuthenticated)
+            {
+                return this.RedirectToAction("Index", "Search");
+            }
+
             return this.View();
         }
     }

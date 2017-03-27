@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Admin</h2>
+
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                    Save new podcast
+                </a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+            <div class="panel-body">
+                @Html.ActionLink("Create", "New", "ManagePodcast", null, new { @class = "btn btn-primary" })
+                Only the admin can add new podcasts
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                    Update podcast
+                </a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                @Html.ActionLink("Update", "Update", "ManagePodcast", null, new { @class = "btn btn-primary" })
+                <br/>
+                Only the admin can update podcasts
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                    Delete podcast
+                </a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                @Html.ActionLink("Delete", "Delete", "ManagePodcast", null, new { @class = "btn btn-primary" })
+                <br/>
+                Only the admin can delete podcasts
+            </div>
+        </div>
+    </div>
+</div>

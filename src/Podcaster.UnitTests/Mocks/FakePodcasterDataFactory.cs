@@ -7,8 +7,7 @@ using Podcaster.Data.DataEF.Contracts;
 namespace Podcaster.UnitTests.Mocks
 {
     [ExcludeFromCodeCoverage]
-
-    internal class FakePodcasterDataFactory 
+    internal class FakePodcasterDataFactory
     {
         private readonly FakeRepositoriesFactory fakeRepositoriesFactory;
 

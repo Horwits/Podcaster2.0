@@ -17,7 +17,7 @@ namespace Podcaster.Web.Areas.Administrator
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
-                "Administrator_default",
+                "Administrator_Default",
                 "Administrator/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional });
         }

@@ -10,7 +10,7 @@ namespace Podcaster.Data.Repositories.Contracts
         IQueryable<T> All();
 
         void Delete(T entity);
-        
+
         void Delete(object id);
 
         void Detach(T entity);

@@ -9,7 +9,6 @@ using Owin;
 namespace Podcaster.Web
 {
     [ExcludeFromCodeCoverage]
-
     public partial class Startup
     {
         public void Configuration(IAppBuilder app)

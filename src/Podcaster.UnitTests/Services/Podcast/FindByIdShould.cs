@@ -1,5 +1,6 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
+
+using NUnit.Framework;
 
 using Ploeh.AutoFixture;
 
@@ -13,20 +14,6 @@ namespace Podcaster.UnitTests.Services.Podcast
     public class FindByIdShould : BaseTestClass
     {
         [Test]
-        public void Throw_WhenArgument_IsNotValid()
-        {
-            // Arrange
-            var fakeEntityFactory = new FakePodcastEntityFactory();
-            var repoFaktory = new FakeRepositoriesFactory(fakeEntityFactory);
-            var fakeData = new FakePodcasterDataFactory(repoFaktory).GetPodcasterData();
-
-            var guid = Guid.Empty;
-
-            // Act & Assert
-            Assert.Throws<ArgumentException>(() => new PodcastService(fakeData.Object).FindById(guid));
-        }
-
-        [Test]
         public void NotThrow_WhenArgument_IsValid()
         {
             // Arrange
@@ -38,6 +25,20 @@ namespace Podcaster.UnitTests.Services.Podcast
 
             // Act & Assert
             Assert.DoesNotThrow(() => new PodcastService(fakeData.Object).FindById(guid));
+        }
+
+        [Test]
+        public void Throw_WhenArgument_IsNotValid()
+        {
+            // Arrange
+            var fakeEntityFactory = new FakePodcastEntityFactory();
+            var repoFaktory = new FakeRepositoriesFactory(fakeEntityFactory);
+            var fakeData = new FakePodcasterDataFactory(repoFaktory).GetPodcasterData();
+
+            var guid = Guid.Empty;
+
+            // Act & Assert
+            Assert.Throws<ArgumentException>(() => new PodcastService(fakeData.Object).FindById(guid));
         }
     }
 }

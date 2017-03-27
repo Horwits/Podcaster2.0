@@ -1,92 +1,79 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Diagnostics.CodeAnalysis;
 using System.Web.Mvc;
 
 using Podcaster.Common.Constants;
+using Podcaster.Models;
+using Podcaster.Services.Podcast.Contracts;
+using Podcaster.Web.Models.Podcast;
 
 namespace Podcaster.Web.Areas.Administrator.Controllers
 {
+    [ExcludeFromCodeCoverage]
     [Authorize(Roles = GlobalConstants.AdminRole)]
     public class ManagePodcastController : Controller
     {
-        // GET: Administrator/PodcastManage
-        public ActionResult Index()
+        private readonly IPodcastService service;
+
+        public ManagePodcastController(IPodcastService service)
         {
-            return View();
+            this.service = service;
         }
 
-        // GET: Administrator/PodcastManage/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Delete()
         {
-            return View();
+            return this.View();
         }
 
-        // GET: Administrator/PodcastManage/Create
-        public ActionResult Create()
+        public ActionResult New()
         {
-            return View();
+            var viewModel = new PodcastViewModel() { Podcast = new PodcastEntity() };
+            return this.View("PodcastForm", viewModel);
         }
 
-        // POST: Administrator/PodcastManage/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(PodcastEntity podcast)
         {
-            try
+            if (!this.ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                var viewModel = new PodcastViewModel { Podcast = podcast, };
 
-                return RedirectToAction("Index");
+                return this.View("PodcastForm", viewModel);
             }
-            catch
+
+            if (podcast.Id == Guid.Empty)
             {
-                return View();
+                podcast.Id = new Guid();
+                this.service.Add(podcast);
             }
+            else
+            {
+                var podcastInDb = this.service.FindById(podcast.Id);
+                podcastInDb.FeedUrl = podcast.FeedUrl;
+                podcastInDb.ImageUrl = podcast.ImageUrl;
+                podcastInDb.Title = podcast.Title;
+                podcastInDb.AuthorName = podcast.AuthorName;
+                podcastInDb.Pricing = podcast.Pricing;
+                podcastInDb.Description = podcast.Description;
+                podcastInDb.IsExplicit = podcast.IsExplicit;
+            }
+
+            this.service.Add(podcast);
+            return this.RedirectToAction("Index", "AdminPanel");
         }
 
-        // GET: Administrator/PodcastManage/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Update(Guid id)
         {
-            return View();
-        }
+            var podcast = this.service.FindById(id);
 
-        // POST: Administrator/PodcastManage/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
+            if (podcast == null)
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                return this.HttpNotFound();
             }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: Administrator/PodcastManage/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Administrator/PodcastManage/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            var viewModel = new PodcastViewModel() { Podcast = podcast };
+            return this.View("PodcastForm", viewModel);
         }
     }
 }

@@ -28,9 +28,32 @@ namespace Podcaster.Data.Migrations
         protected override void Seed(PodcasterDbContext context)
         {
             this.userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            /*this.SeedRoles(context);
-            this.SeedUsers(context);*/
-            this.SeedPodcasts(context);
+
+            /*this.SeedRoles(context);*/
+            /* this.SeedUsers(context);*/
+            /* this.SeedPodcasts(context);*/
+        }
+
+        private void SeedPodcasts(PodcasterDbContext context)
+        {
+            if (!context.Podcasts.Any())
+            {
+                context.Podcasts.AddOrUpdate(
+                    new PodcastEntity()
+                        {
+                            Id = new Fixture().Create<Guid>(),
+                            AuthorName = "Joe Rogan",
+                            Copyright = "Talking Monkey Productions",
+                            Description = "Conduit to the Gaian Mind",
+                            FeedUrl = "http://joeroganexp.joerogan.libsynpro.com/rss",
+                            ImageUrl =
+                                "http://is3.mzstatic.com/image/thumb/Podcasts122/v4/8c/47/f0/8c47f063-b593-ce2e-1478-68adac8114f5/mza_2606999114440466430.jpg/170x170bb-85.jpg",
+                            Language = "English",
+                            Pricing = 0m,
+                            Title = "The Joe Rogan Experience - Joe Rogan",
+                            IsExplicit = true
+                        });
+            }
         }
 
         private void SeedRoles(PodcasterDbContext context)
@@ -52,31 +75,11 @@ namespace Podcaster.Data.Migrations
             }
         }
 
-        private void SeedPodcasts(PodcasterDbContext context)
-        {
-            if (!context.Podcasts.Any())
-            {
-                context.Podcasts.AddOrUpdate(new PodcastEntity()
-                {
-                    Id = new Fixture().Create<Guid>(),
-                    AuthorName = "Joe Rogan",
-                    Copyright = "Talking Monkey Productions",
-                    Description = "Conduit to the Gaian Mind",
-                    FeedUrl = "http://joeroganexp.joerogan.libsynpro.com/rss",
-                    ImageUrl = "http://is3.mzstatic.com/image/thumb/Podcasts122/v4/8c/47/f0/8c47f063-b593-ce2e-1478-68adac8114f5/mza_2606999114440466430.jpg/170x170bb-85.jpg",
-                    Language = "English",
-                    Pricing = 0m,
-                    Title = "The Joe Rogan Experience - Joe Rogan",
-                    IsExplicit = true
-                });
-            }
-        }
-
         private void SeedUsers(PodcasterDbContext context)
         {
-            if (!context.Users.Any())
+            if (context.Users.Any())
             {
-                var fixture = new Fixture();
+                /*var fixture = new Fixture();
                 for (int i = 0; i < 10; i++)
                 {
                     var mail = $"a{i}b{i * 2}@abv.com";
@@ -85,7 +88,11 @@ namespace Podcaster.Data.Migrations
                     this.userManager.Create(user, "123456");
 
                     this.userManager.AddToRole(user.Id, GlobalConstants.UserRole);
-                }
+                }*/
+                var admin = new ApplicationUser("admin@horwits.bg", "admin@horwits.bg");
+
+                this.userManager.Create(admin, "admin#");
+                this.userManager.AddToRole(admin.Id, GlobalConstants.AdminRole);
             }
         }
     }

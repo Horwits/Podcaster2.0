@@ -1,7 +1,5 @@
 ﻿using System;
 
-using Moq;
-
 using NUnit.Framework;
 
 using Podcaster.Services.Podcast;
@@ -13,18 +11,6 @@ namespace Podcaster.UnitTests.Services.Podcast
     [TestFixture]
     public class UpdateShould : BaseTestClass
     {
-        [Test]
-        public void Throw_WhenArgument_IsNotValid()
-        {
-            // Arrange
-            var fakeEntityFactory = new FakePodcastEntityFactory();
-            var repoFaktory = new FakeRepositoriesFactory(fakeEntityFactory);
-            var fakeData = new FakePodcasterDataFactory(repoFaktory).GetPodcasterData();
-
-            // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => new PodcastService(fakeData.Object).Update(null));
-        }
-
         [Test]
         public void NotThrow_WhenArgument_IsNotValid()
         {
@@ -39,6 +25,19 @@ namespace Podcaster.UnitTests.Services.Podcast
             Assert.DoesNotThrow(() => sut.Update(entity));
         }
 
+        [Test]
+        public void Throw_WhenArgument_IsNotValid()
+        {
+            // Arrange
+            var fakeEntityFactory = new FakePodcastEntityFactory();
+            var repoFaktory = new FakeRepositoriesFactory(fakeEntityFactory);
+            var fakeData = new FakePodcasterDataFactory(repoFaktory).GetPodcasterData();
+
+            // Act & Assert
+            Assert.Throws<ArgumentNullException>(() => new PodcastService(fakeData.Object).Update(null));
+        }
+
+        // Arrange
 
         /*[Test]
         public void Call_AddMethod_OfPodcasterDataOnceWhenArgument_IsValid()
@@ -55,8 +54,6 @@ namespace Podcaster.UnitTests.Services.Podcast
             sut.Add(entity);
             fakeData.Verify(() => fakeData.Object.Podcasts.Add(entity), Times.Once());
         }*/
-
-        // Arrange
         // Act
         // Assert
         /*[Test]

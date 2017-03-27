@@ -1,7 +1,6 @@
 ﻿using System;
 
 using Podcaster.Models;
-using Podcaster.Models.Contracts;
 
 namespace Podcaster.Services.Podcast.Contracts
 {

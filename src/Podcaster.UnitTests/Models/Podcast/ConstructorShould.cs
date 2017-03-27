@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-
 using NUnit.Framework;
 
-using Podcaster.Models;
 using Podcaster.UnitTests.Mocks;
 
 namespace Podcaster.UnitTests.Models.Podcast

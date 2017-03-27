@@ -5,7 +5,6 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 using Podcaster.Data.DbContexts.Contracts;
 using Podcaster.Models;
-using Podcaster.Models.Contracts;
 
 namespace Podcaster.Data.DbContexts
 {
