@@ -26,7 +26,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6E2FA0D5-FEBC-4159-936C-FA2FFE5EED18}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
-		src\Podcaster.UnitTests\Models\ApplicationUser\json1.json = src\Podcaster.UnitTests\Models\ApplicationUser\json1.json
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -38,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Podcaster.Web", "src\Podcas
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Podcaster.Common", "src\Podcaster.Common\Podcaster.Common.csproj", "{943E3583-3E46-4F00-872E-7C4ECB6A7F2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Podcaster.Console", "src\Podcaster.Console\Podcaster.Console.csproj", "{3A473112-1BAC-4C17-9F37-21ED4EFBB77D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +78,10 @@ Global
 		{943E3583-3E46-4F00-872E-7C4ECB6A7F2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{943E3583-3E46-4F00-872E-7C4ECB6A7F2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{943E3583-3E46-4F00-872E-7C4ECB6A7F2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A473112-1BAC-4C17-9F37-21ED4EFBB77D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A473112-1BAC-4C17-9F37-21ED4EFBB77D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A473112-1BAC-4C17-9F37-21ED4EFBB77D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A473112-1BAC-4C17-9F37-21ED4EFBB77D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,5 +95,6 @@ Global
 		{71B2CFBB-E855-4BC1-B808-47E9E9609108} = {DCE320CE-D6BC-4580-8FEE-19EFF1A454D7}
 		{56424B66-7C5A-4FE2-B4DC-95A6B2004D6A} = {789920E9-313A-40C7-AAAD-252F53C532F9}
 		{943E3583-3E46-4F00-872E-7C4ECB6A7F2D} = {17FE0BA0-FB00-4E14-B494-28AB49B9CB72}
+		{3A473112-1BAC-4C17-9F37-21ED4EFBB77D} = {789920E9-313A-40C7-AAAD-252F53C532F9}
 	EndGlobalSection
 EndGlobal

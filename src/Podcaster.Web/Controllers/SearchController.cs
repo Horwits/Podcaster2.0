@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 
 using Podcaster.Services.Podcast.Contracts;
+using Podcaster.Web.Models.Search;
 
 namespace Podcaster.Web.Controllers
 {
@@ -19,27 +20,27 @@ namespace Podcaster.Web.Controllers
         // GET: Search
         public ViewResult Index()
         {
-            return this.View();
+            var model = new SearchViewModel();
+            return this.View(model);
         }
 
-        /*// TODO: AUTH
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(string title)
+        public ActionResult Index(SearchViewModel model)
         {
-            if (title == null)
+            if (model.SearchTitle == null)
             {
-                return this.View();
+                return this.View(model);
             }
 
             if (this.ModelState.IsValid)
             {
-                var podcastEntity = this.service.FindByTitle(title);
+                var podcastEntity = this.service.FindByTitle(model.SearchTitle);
 
-                return this.PartialView("_PodcastDetailsPartial", podcastEntity);
+                model.Podcast = podcastEntity;
             }
 
-            return this.View();
-        }*/
+            return this.View(model);
+        }
     }
 }
