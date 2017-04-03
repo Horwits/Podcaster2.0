@@ -7,7 +7,10 @@
 
     <p>Podcaster is a free podcasting service. It provides a user-friendly interface to subscribe, listen and download a podcast.</p>
 
-    <p>If you have any questions, please feel free to <a href="Contact.cshtml">contact us</a></p>
-
-    <p>Start with Podcaster <a href="../Account/Register.cshtml">contact us</a></p>
+    <p>If you have any questions, please feel free to @Html.ActionLink("contact us", "Contact")</p>
+    
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <p>Start with Podcaster @Html.ActionLink("here", "Index")</p>
+    }
 </div>
