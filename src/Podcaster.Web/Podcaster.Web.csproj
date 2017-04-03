@@ -304,6 +304,7 @@
     <Content Include="Views\Shared\_PodcastDetailsPartial.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
     <Content Include="Views\Shared\_UserLoginPartial.cshtml" />
+    <Content Include="Views\Shared\_UserRegisterPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administrator\Views\Shared\" />

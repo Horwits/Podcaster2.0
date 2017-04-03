@@ -2,15 +2,102 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron text-center">
-    <h1>Podcaster2.0</h1>
-    <p class="lead">Podcaster2.0 is a free podcast service.</p>
-</div>
-
-<div class="row">
-    <div class="col-md-12 text-center">
+<div id="content-row" class="row">
+    <div class="col-md-6 text-center">
+        <h1>Podcaster</h1>
         <p>
-            <a class="btn btn-lg btn-primary" href=@Url.Action("Register", "Account")>Register &raquo;</a>
+            is
+            <br />
+            an easy and powerful way
+            <br />
+            to manage your favorite podcasts.
+            <br />
+            Everything you need.
+            <br />
+            No
+            technology to learn.
         </p>
+    </div>
+    <div class="col-md-6 text-center">
+        <div id="accordion" class="panel-group">
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+
+                    <h4 class="panel-title">
+
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Register</a>
+
+                    </h4>
+
+                </div>
+
+                <div id="collapseOne" class="panel-collapse collapse">
+
+                    <div class="panel-body">
+
+                        @Html.Partial("_UserRegisterPartial")
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+
+                    <h4 class="panel-title">
+
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Login</a>
+
+                    </h4>
+
+                </div>
+
+                <div id="collapseTwo" class="panel-collapse collapse in">
+
+                    <div class="panel-body">
+
+                        <p class="text-center">
+                            @Html.Partial("_UserLoginPartial")
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+
+                    <h4 class="panel-title">
+
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. What is CSS?</a>
+
+                    </h4>
+
+                </div>
+
+                <div id="collapseThree" class="panel-collapse collapse">
+
+                    <div class="panel-body">
+
+                        <p>
+                            CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
     </div>
 </div>

@@ -1,13 +1,12 @@
 ﻿@using Podcaster.Web.Models.Account
 @model LoginViewModel
 
-<div class="col-md-8">
-    <section id="loginForm">
-        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-        {
-            @Html.AntiForgeryToken()
-            <h4>Use a local account to log in.</h4>
-            <hr/>
+<section id="loginForm">
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h4>Use a local account to log in.</h4>
+            <hr />
             @Html.ValidationSummary(true, string.Empty, new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
@@ -33,14 +32,17 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Log in" class="btn btn-default"/>
+                    <input type="submit" value="Log in" class="btn btn-default" />
                 </div>
             </div>
-        }
-    </section>
-</div>
+    }
+</section>
 @*<div class="col-md-4">
-    <section id="socialLoginForm">
-        @Html.Partial("~/Views/Account/_ExternalLoginsListPartial.cshtml", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-    </section>
-</div>*@
+        <section id="socialLoginForm">
+            @Html.Partial("~/Views/Account/_ExternalLoginsListPartial.cshtml", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+    </div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
