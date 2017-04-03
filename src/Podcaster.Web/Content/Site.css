@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('Imgs/Grey-Texture-Background-and-Wallpaper-22.jpg');
+    background-image: url('Imgs/White-christmas-light-background.png');
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -55,4 +57,20 @@ textarea {
 
 #content-row {
     margin-top: 100px;
+}
+
+.dark-blue {
+    color: lightgreen;
+}
+
+.btn-default {
+    background-color: lightgreen;
+}
+
+#hm-big-heading {
+    font-size: 50px;
+}
+
+.hm-big-text {
+    font-size: 2em;
 }
