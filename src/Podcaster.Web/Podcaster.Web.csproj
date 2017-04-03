@@ -303,6 +303,7 @@
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Shared\_PodcastDetailsPartial.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
+    <Content Include="Views\Shared\_UserLoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administrator\Views\Shared\" />
