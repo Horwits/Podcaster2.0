@@ -20,10 +20,10 @@ namespace Podcaster.Web.Areas.Administrator.Controllers
             this.service = service;
         }
 
-        public ActionResult Delete()
+       /* public ActionResult Delete()
         {
             return this.View();
-        }
+        }*/
 
         public ActionResult New()
         {

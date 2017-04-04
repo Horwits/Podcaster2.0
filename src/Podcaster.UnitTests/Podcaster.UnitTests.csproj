@@ -113,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseTestClass.cs" />
+    <Compile Include="Mocks\FakeControllerContextFactory.cs" />
     <Compile Include="Models\Podcast\ConstructorShould.cs" />
     <Compile Include="Mocks\FakePodcastEntityFactory.cs" />
     <Compile Include="Mocks\FakePodcasterDataFactory.cs" />

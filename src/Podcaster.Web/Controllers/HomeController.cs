@@ -1,9 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace Podcaster.Web.Controllers
 {
-    [ExcludeFromCodeCoverage]
     public class HomeController : Controller
     {
         /*[OutputCache(Duration = 43200)]*/

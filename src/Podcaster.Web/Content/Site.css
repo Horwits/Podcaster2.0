@@ -3,6 +3,8 @@
     padding-bottom: 20px;
     background-image: url('Imgs/Grey-Texture-Background-and-Wallpaper-22.jpg');
     background-image: url('Imgs/White-christmas-light-background.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -60,11 +62,12 @@ textarea {
 }
 
 .dark-blue {
-    color: lightgreen;
+    color: rgb(92,229,0);
 }
 
 .btn-default {
-    background-color: lightgreen;
+    background-color:  rgb(92,229,0);
+    border-color:  rgb(92,229,0);
 }
 
 #hm-big-heading {

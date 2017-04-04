@@ -238,7 +238,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Imgs\Grey-Texture-Background-and-Wallpaper-22.jpg" />
     <Content Include="Content\Imgs\header.jpg" />
+    <Content Include="Content\Imgs\White-christmas-light-background.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
